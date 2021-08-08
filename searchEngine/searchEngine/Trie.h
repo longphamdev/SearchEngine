@@ -1,41 +1,42 @@
 #ifndef _TRIE_
 #define _TRIE_
 
-#include <iostream>
-#include <fstream>
 #include <vector>
-#include <unordered_map>
-#include <sstream>
-#include <queue>
-#include <utility>
-#include <algorithm>
+#include <string>
 using namespace std;
-class TrieNode {
+struct trieNode
+{
 public:
-	unordered_map <string, int> data;
-	TrieNode* child[38];
-	bool exist = false;
-	void trieTraverse(TrieNode* head);
-};
-class Trie {
-private:
-	TrieNode* root = nullptr;
-	void __clear(TrieNode* node);
-
-public:
-	vector <pair <string, int>> search(string keyword);
-	void build(string key, unordered_map<string, int> data);
-
-	void save(string filename);
-
-	void load(string filename);
-
-	void clear();
-
-	bool isEmpty();
-
-	void trieTraverse();
+    trieNode();
+    trieNode* child[38]; // 0-> 25 : letters, 26-> 35: numbers, 36,37: # $
+    vector<int> place;
 
 };
+
+
+struct trie
+{
+public:
+    trieNode* root = new trieNode;
+    trie(vector<string> input);
+    ~trie();
+};
+
+
+struct fileData
+{
+    trie data;
+    string fileName;
+    vector<int> price;
+    fileData(vector<string> input, string fileName);
+};
+
+
+vector<fileData> getFileData(string folderName);
+
+// function for stopword
+
+//function for synonyms
+
 int get_index(char key);
 #endif
