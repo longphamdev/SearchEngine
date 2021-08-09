@@ -31,7 +31,7 @@ struct fileData
     fileData(vector<string> input, string fileName);
 };
 
-
+void insert(struct trieNode* root, string key, int place);
 vector<fileData> getFileData(string folderName);
 
 // function for stopword

@@ -1,17 +1,59 @@
 #include "search.h"
 
-vector<searchData> search(vector<fileData> docData, vector<fileData> stopwordData, vector<fileData> synonymData, string query)
+void preprocess(string& input)
 {
-	//do something :v
+    int Aa = 'A' - 'a';
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+
+    }
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+        if (input[i] > 'z' && input[i] < 'a' && input[i] < '0' && input[i] > '9' && input[i] != '#' && input[i] != '$' && input[i] != '*' 
+            && input[i] != '"')
+        {
+
+        }
+    }
+}
+
+vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
+    const vector<fileData>& synonymData, const string& query)
+{
+	//cut the query
+
+    //preprocess query
+
+    //remove stopwords 
+
 	vector<searchData>  result;
-	//do something :v
+
+    //exact search (and wild card)
+ 
+    //intitle search
+
+    // AND *
+
+    // OR *
+
+    //search price range *
+
+    //search price *
+
+    //synonym *
+
+    //normal search
+
+    //sort search result
 	return result;
 }
 
-vector<int> normalSearch(trieNode* root, string key)
+vector<int> normalSearch(const fileData& file, const string& key)
 {
 	vector<int> empty;
-    trieNode* pCrawl = root;
+    trieNode* pCrawl = file.data.root;
 
     for (int i = 0; i < key.length(); i++)
     {
@@ -35,5 +77,13 @@ vector<int> normalSearch(trieNode* root, string key)
     }
 
     return (pCrawl->place);
-	
 }
+
+vector<int> exactSearch(const fileData& file, const vector<string>& query)
+{
+    vector<int> empty;
+    
+    return empty;
+}
+
+
