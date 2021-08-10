@@ -79,6 +79,8 @@ vector<int> normalSearch(const fileData& file, const string& key)
     return (pCrawl->place);
 }
 
+
+
 vector<int> exactSearch(const fileData& file, const vector<string>& query)
 {
     vector<int> empty;

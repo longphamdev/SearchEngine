@@ -1,6 +1,10 @@
 #pragma once
+#ifndef _SEARCH_H_
+#define _SEARCH_H_
 #include "Trie.h"
 #include <fstream>
+#include<string>
+using namespace std;
 
 int const MIN_INT = -2147483647;
 
@@ -27,3 +31,5 @@ vector<int> exactSearch(const fileData& file,const vector<string>& query); // no
 void preprocess(string& input);
 
 //void testDisplay(const string &fileName,  const vector<int> &places);
+
+#endif

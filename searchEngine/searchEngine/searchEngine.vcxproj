@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="query1.h" />
     <ClInclude Include="search.h" />
     <ClInclude Include="Trie.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="query1.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="Trie.cpp" />
   </ItemGroup>
