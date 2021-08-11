@@ -21,6 +21,9 @@
     <ClInclude Include="Trie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="query1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="search.cpp">
@@ -30,6 +33,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="query1.cpp">
+=======
+    <ClCompile Include="UI.cpp">
+>>>>>>> 4736ccab287628a58b97ff9c4b2261f883941008
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

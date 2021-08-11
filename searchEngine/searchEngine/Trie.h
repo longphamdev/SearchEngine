@@ -1,5 +1,6 @@
-#ifndef _TRIE_
-#define _TRIE_
+#pragma once
+#ifndef _TRIE_H_
+#define _TRIE_H_
 
 #include <vector>
 #include <string>

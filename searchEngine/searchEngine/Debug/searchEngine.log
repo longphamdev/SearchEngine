@@ -1,0 +1,8 @@
+﻿  main.cpp
+  query1.cpp
+  search.cpp
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(12,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(58,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  searchEngine.vcxproj -> D:\ProjectCS\SearchEngine\searchEngine\Debug\searchEngine.exe

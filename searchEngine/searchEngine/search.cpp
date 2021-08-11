@@ -171,7 +171,8 @@ vector<int> normalSearch(const fileData& file, const string& key)
     return (pCrawl->place);
 }
 
-vector<int> exactSearch(const fileData& file, vector<string>& query)
+
+vector<int> exactSearch(const fileData& file, const vector<string>& query)
 {
     vector<int> empty;
     vector<int> firstWordLocation = normalSearch(file, query[0]);
