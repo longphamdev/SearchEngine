@@ -42,7 +42,6 @@ void insert(struct trieNode* root, string key, int place)
 
         pCrawl = pCrawl->child[index];
     }
-
     // mark last node as leaf
     pCrawl->place.push_back(place);
 }

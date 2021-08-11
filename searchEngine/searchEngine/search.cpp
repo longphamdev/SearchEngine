@@ -54,7 +54,6 @@ vector<int> normalSearch(const fileData& file, const string& key)
 {
 	vector<int> empty;
     trieNode* pCrawl = file.data.root;
-
     for (int i = 0; i < key.length(); i++)
     {
         
@@ -75,7 +74,6 @@ vector<int> normalSearch(const fileData& file, const string& key)
 
         pCrawl = pCrawl->child[index];
     }
-
     return (pCrawl->place);
 }
 
@@ -84,7 +82,6 @@ vector<int> normalSearch(const fileData& file, const string& key)
 vector<int> exactSearch(const fileData& file, const vector<string>& query)
 {
     vector<int> empty;
-    
     return empty;
 }
 
