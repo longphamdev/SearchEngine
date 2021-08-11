@@ -10,7 +10,7 @@ public:
     trieNode();
     trieNode* child[38]; // 0-> 25 : letters, 26-> 35: numbers, 36,37: # $
     vector<int> place;
-
+    bool existed = false;
 };
 
 
@@ -38,5 +38,4 @@ vector<fileData> getFileData(string folderName);
 
 //function for synonyms
 
-int get_index(char key);
 #endif
