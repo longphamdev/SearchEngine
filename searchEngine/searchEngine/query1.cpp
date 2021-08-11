@@ -13,6 +13,7 @@ vector<int> findAnd(string ss1, string ss2, const fileData& file)
 	}
 	return rs;
 }
+
 vector<int> findOr(string ss1, string ss2, const fileData& file)
 {
 	vector<int> rs;
@@ -24,4 +25,14 @@ vector<int> findOr(string ss1, string ss2, const fileData& file)
 		rs.insert(rs.end(), resultSs2.begin(), resultSs2.end());
 	}
 	return rs;
+}
+
+bool findNOT(string ss, const fileData& file)
+{
+	vector<int> rs(normalSearch(file,ss));
+	if (rs.empty() == 1)
+	{
+		return 0;
+	}
+	return 1;
 }

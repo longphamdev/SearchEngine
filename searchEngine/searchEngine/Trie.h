@@ -15,6 +15,7 @@ public:
 };
 
 
+
 struct trie
 {
 public:
@@ -23,14 +24,27 @@ public:
     ~trie();
 };
 
+struct price {
+    int amount;
+    int place;
+};
 
 struct fileData
 {
     trie data;
     string fileName;
-    vector<int> price;
+    vector<price> priceData;
     fileData(vector<string> input, string fileName);
 };
+
+
+struct synonymData {
+    trie data;
+    vector<string> words;
+};
+
+
+
 
 void insert(struct trieNode* root, string key, int place);
 vector<fileData> getFileData(string folderName);
