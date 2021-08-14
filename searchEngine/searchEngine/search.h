@@ -28,7 +28,7 @@ vector<int> normalSearch(const fileData& file, const string& key);
 vector<string> stringToWord(const string & input);
 void preprocess(string& input);
 void preprocess_exactSearch(string& input);
-vector<int> exactSearch(const fileData& file, vector<string>& query);
+vector<int> exactSearch(const fileData& file, const vector<string>& query);
 
 //sorting
 int getMax(vector<int> &arr);
