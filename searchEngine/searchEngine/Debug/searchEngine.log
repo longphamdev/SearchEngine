@@ -1,1 +1,20 @@
-﻿
+﻿  main.cpp
+  query1.cpp
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\query1.cpp(32,37): error C2664: 'std::vector<int,std::allocator<int>> normalSearch(const fileData &,const std::string &)': cannot convert argument 1 from 'std::string' to 'const fileData &'
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\query1.cpp(32,37): message : Reason: cannot convert from 'std::string' to 'const fileData'
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\query1.cpp(32,30): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.h(26,13): message : see declaration of 'normalSearch'
+  search.cpp
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(32,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(41,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(59,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(116,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(149,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\search.cpp(179,23): warning C4018: '<': signed/unsigned mismatch
+  Trie.cpp
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\Trie.cpp(15,23): warning C4018: '<': signed/unsigned mismatch
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\Trie.cpp(26,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+D:\ProjectCS\SearchEngine\searchEngine\searchEngine\Trie.cpp : fatal error C1090: PDB API call failed, error code '3': D:\ProjectCS\SearchEngine\searchEngine\searchEngine\Debug\vc142.pdb

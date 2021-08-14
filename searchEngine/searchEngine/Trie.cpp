@@ -31,7 +31,7 @@ void insert(struct trieNode* root, string key, int place)
             index = key[i] - 'a';
 
         else if (key[i] >= '0' && key[i] <= '9')
-            index = key[i] - '0';
+            index = key[i] - '0'+26;
 
         else if (key[i] == '#')
             index = 36;
