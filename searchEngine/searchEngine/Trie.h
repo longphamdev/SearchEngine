@@ -20,8 +20,9 @@ public:
 struct trie
 {
 public:
-    trieNode* root = new trieNode;
-    trie(vector<string> input);
+    trieNode* root;
+    void insertTrie(vector<string> input);
+    trie();
     ~trie();
 };
 

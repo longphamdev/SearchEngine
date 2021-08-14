@@ -10,15 +10,23 @@ trieNode::trieNode()
 }
 
 
-trie::trie(vector<string> input)
+void trie::insertTrie(vector<string> input)
 {
     for (int i = 0; i < input.size(); i++)
     {
         insert(this->root, input[i], i);
     }
 }
-
-
+trie::trie() {
+    root = new trieNode;
+}
+trie::~trie() {
+    delete[]root;
+}
+price::price() {
+    amount = 0;
+    place = 0;
+}
 void insert(struct trieNode* root, string key, int place)
 {
     trieNode* pCrawl = root;
