@@ -1,1 +1,28 @@
-﻿  searchEngine.vcxproj -> D:\projectCS163\SearchEngine\searchEngine\Debug\searchEngine.exe
+﻿  fileHandling.cpp
+  main.cpp
+  query1.cpp
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\query1.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\query1.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
+  search.cpp
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(32,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(41,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(58,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(91,27): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(97,27): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(136,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(170,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(199,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(223,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(228,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
+          with
+          [
+              _Ty=int
+          ]
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(234,27): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(243,35): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(312,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(325,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  searchEngine.vcxproj -> D:\projectCS163\SearchEngine\searchEngine\Debug\searchEngine.exe

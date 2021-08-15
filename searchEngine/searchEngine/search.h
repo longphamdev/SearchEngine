@@ -1,10 +1,11 @@
 #pragma once
 #ifndef _SEARCH_H_
 #define _SEARCH_H_
-#include "Trie.h"
 #include <iostream>
 #include <fstream>
 #include<string>
+#include "fileHandling.h"
+#include "Trie.h"
 using namespace std;
 
 int const MIN_INT = -2147483647;
