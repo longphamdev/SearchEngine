@@ -29,10 +29,6 @@ C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cp
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(264,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(288,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(293,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
-          with
-          [
-              _Ty=int
-          ]
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(299,27): warning C4018: '<': signed/unsigned mismatch
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(308,35): warning C4018: '<': signed/unsigned mismatch
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(359,23): warning C4018: '<': signed/unsigned mismatch
