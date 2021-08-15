@@ -1,4 +1,11 @@
-﻿  main.cpp
+﻿  fileHandling.cpp
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(66,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(80,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(86,30): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(105,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(140,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(169,23): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
   query1.cpp
   search.cpp
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
@@ -39,6 +46,10 @@ C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cp
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(459,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(478,12): warning C4804: '<': unsafe use of type 'bool' in operation
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(478,20): warning C4018: '<': signed/unsigned mismatch
+  Trie.cpp
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(15,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(52,23): warning C4018: '<': signed/unsigned mismatch
+  UI.cpp
   Generating Code...
 C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(482): warning C4715: 'isPriceRange': not all control paths return a value
   searchEngine.vcxproj -> C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe

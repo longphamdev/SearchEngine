@@ -11,9 +11,11 @@ int main()
 {
 	string query;
 
-	DrawMain();
-	GotoXY(21, 15);
-	getline(cin, query);
+	//DrawMain();
+	//GotoXY(21, 15);
+	//getline(cin, query);
+
+	vector<fileData> docData = getFileData();
 
 	return 0;
 }
