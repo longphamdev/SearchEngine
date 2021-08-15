@@ -1,6 +1,13 @@
-﻿search.obj : error LNK2005: "class std::vector<int,class std::allocator<int> > __cdecl findAnd(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fileData const &)" (?findAnd@@YA?AV?$vector@HV?$allocator@H@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0ABUfileData@@@Z) already defined in query1.obj
-search.obj : error LNK2005: "bool __cdecl findNOT(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fileData const &)" (?findNOT@@YA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABUfileData@@@Z) already defined in query1.obj
-search.obj : error LNK2005: "class std::vector<int,class std::allocator<int> > __cdecl findOr(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fileData const &)" (?findOr@@YA?AV?$vector@HV?$allocator@H@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0ABUfileData@@@Z) already defined in query1.obj
-search.obj : error LNK2005: "class std::vector<int,class std::allocator<int> > __cdecl findPrice(int,struct fileData const &)" (?findPrice@@YA?AV?$vector@HV?$allocator@H@std@@@std@@HABUfileData@@@Z) already defined in query1.obj
-search.obj : error LNK2005: "class std::vector<int,class std::allocator<int> > __cdecl findRangePrice(int,int,struct fileData const &)" (?findRangePrice@@YA?AV?$vector@HV?$allocator@H@std@@@std@@HHABUfileData@@@Z) already defined in query1.obj
-C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿ Trie.cpp
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(69,23): warning C4018: '<': signed/unsigned mismatch
+  fileHandling.cpp
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(72,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(86,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(92,30): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(111,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(146,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(175,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  searchEngine.vcxproj -> C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe
+

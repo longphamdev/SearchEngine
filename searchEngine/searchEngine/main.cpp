@@ -9,42 +9,15 @@
 
 int main()
 {
-	/*ifstream fin;
-	ofstream fout;
 	string query;
-	const vector<fileData> synonymData;
-	const vector<fileData> stopwordData;
-	const vector<fileData> docData;
-	vector<searchData> result;
-	DrawMain();
-	GotoXY(21, 15);
-	getline(cin, query);
 
-	result = search(docData, stopwordData,
-		synonymData, query);
+	//DrawMain();
+	//GotoXY(21, 15);
+	//getline(cin, query);
 
-	for (int i = 0; i < 5; i++) {
-		TextColor(12);
-		cout << result[i].fileName << endl;
-		TextColor();
-		string temp;
-		fin.open(result[i].fileName);
-		if (!fin.is_open()) {
-			cout << "Cannot open file" << endl;
-		}
-		else {
-			for (int i = 0; i < 3; i++) {
-				getline(fin, temp);
-				cout << temp;
-			}
-
-		}
-		fin.close();
-	}*/
-
-	for (int i = 0; i < 20; i++) {
-		TextColor(i);
-		cout << "Hello" << endl;
-	}
+	vector<fileData> docData = getFileData();
+	//vector<fileData> test;
+	//fileData tmp = getStopWord();
+	//test.push_back(tmp);
 	return 0;
 }

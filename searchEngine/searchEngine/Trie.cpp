@@ -9,6 +9,18 @@ trieNode::trieNode()
     }
 }
 
+void copyTrieNode(trieNode* origin, trieNode* copy) 
+{
+    if (origin)
+        copy = new trieNode;
+    else return;
+
+    for (int i = 0; i < 38; ++i)
+    {
+        copyTrieNode(origin->child[i], copy->child[i]);
+    }
+}
+
 
 void trie::insertTrie(vector<string> input)
 {
@@ -17,16 +29,38 @@ void trie::insertTrie(vector<string> input)
         insert(this->root, input[i], i);
     }
 }
-
+bool trie::isEmpty(trieNode*root) {
+    for (int i = 0; i < 38; i++) {
+        if (root->child[i])
+            return false;
+    }
+    return true;
+}
 
 trie::trie() {
     root = new trieNode;
 }
 
-trie::~trie() {
-    delete[]root;
+trie::trie(const trie& origin)
+{
+    this->root = NULL;
+    copyTrieNode(origin.root, this->root);
 }
 
+trie::~trie() {
+    deleteTrie(root);
+}
+
+void deleteTrie(trieNode* root)
+{
+    if (root == NULL)
+        return;
+    for (int i = 0; i < 38; ++i)
+    {
+        deleteTrie(root->child[i]);
+    }
+    delete root;
+}
 
 void insert(struct trieNode* root, string key, int place)
 {
@@ -40,11 +74,13 @@ void insert(struct trieNode* root, string key, int place)
             index = key[i] - 'a';
 
         else if (key[i] >= '0' && key[i] <= '9')
-            index = key[i] - '0'+26;
+            index = key[i] - '0' + 26;
 
         else if (key[i] == '#')
             index = 36;
-        else index = 37;
+        else if (key[i] == '$')
+            index = 37;
+        else continue;
 
         if (!pCrawl->child[index])
             pCrawl->child[index] = new trieNode;
@@ -54,4 +90,3 @@ void insert(struct trieNode* root, string key, int place)
     // mark last node as leaf
     pCrawl->place.push_back(place);
 }
-

@@ -1,5 +1,5 @@
 #include "query1.h"
-
+/*
 vector<int> findAnd(string ss1, string ss2, const fileData& file)
 {
 	vector<int> rs;
@@ -64,3 +64,4 @@ vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData&
 	}
 	return place;
 }
+*/

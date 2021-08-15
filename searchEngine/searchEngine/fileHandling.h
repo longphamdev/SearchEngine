@@ -6,6 +6,7 @@
 #include <algorithm>
 #include "Trie.h"
 #include<string.h>
+#include<sstream>
 
 
 using namespace std;
@@ -24,9 +25,10 @@ struct fileData
 {
 public:
     trie data;
+    trie titleData;
     string fileName;
     vector<price> priceData;
-    fileData(vector<string> input, string fileName);
+    fileData(string dir, string fileName);
 };
 
 
@@ -35,7 +37,19 @@ public:
 
 
 
-vector<fileData> getFileData(string folderName);
+
+
+vector<fileData> getFileData();
+vector<synonymData> getSynonym();
+fileData getStopWord();
 
 int get_index(char key);
+
+
+//--------------------ham ho tro
+string lowCase(string s);
+string checkSymbol(string s);
+string deleteTxt(string s);
+vector<string> splitWord(string S);
+bool isPrice(string input);
 #endif

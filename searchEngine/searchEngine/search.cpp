@@ -24,7 +24,6 @@ void preprocess_exactSearch(string& input)
 
     input = tmp;
 }
-
 void preprocess(string& input)
 {
     int Aa = 'A' - 'a';
@@ -49,7 +48,6 @@ void preprocess(string& input)
 
     input = tmp;
 }
-
 vector<string> stringToWord(const string& input)
 {
     vector<string> result;
@@ -69,13 +67,18 @@ vector<string> stringToWord(const string& input)
     return result;
 }
 
-// 
-// 
-
 vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
     const vector<fileData>& synonymData, const string& query)
 {
+    //init the searchData
     vector<searchData>  result;
+    searchData tmpS;
+    tmpS.score = 0;
+    for (int i = 0; i < docData.size(); ++i)
+    {
+        tmpS.fileName = docData[i].fileName;
+        result.push_back(tmpS);
+    }
 
 	//cut the query
     vector<string> cutQuery = stringToWord(query);
@@ -203,11 +206,13 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
 
             for (int j = 0; j < docData.size(); ++j)
             {
-                if (findNOT(tmp, docData[j]))
+                tmpSearchResult = findPrice(stoi(tmp), docData[j]);
+                result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+                if (tmpSearchResult.size() == 0)
                 {
                     result[j].score -= 5;
                 }
-                else result[j].score += 5;
+                else result[j].score += tmpSearchResult.size();
             }
         }
     }
@@ -254,8 +259,6 @@ vector<int> normalSearch(const fileData& file, const string& key)
     }
     return (pCrawl->place);
 }
-
-
 vector<int> exactSearch(const fileData& file, const vector<string>& query)
 {
     vector<int> empty;
@@ -299,6 +302,7 @@ vector<int> exactSearch(const fileData& file, const vector<string>& query)
         for (int j = 0; j < query.size(); ++j)
         {
             fin >> tmp;
+            preprocess_exactSearch(tmp);
             if (tmp != query[i + j])
                 break;
 
@@ -317,14 +321,12 @@ vector<int> exactSearch(const fileData& file, const vector<string>& query)
     return empty;
 }
 
-
 void swap(int* a, int* b)
 {
     int t = *a;
     *a = *b;
     *b = t;
 }
-
 int Partition(vector<int>& v, int start, int end) {
 
     int pivot = end;
@@ -339,7 +341,6 @@ int Partition(vector<int>& v, int start, int end) {
     return j;
 
 }
-
 void Quicksort(vector<int>& v, int start, int end) {
 
     if (start < end) {
@@ -349,7 +350,6 @@ void Quicksort(vector<int>& v, int start, int end) {
     }
 
 }
-
 
 vector<searchData> selectTop5(vector<searchData>& searchResult)
 {
@@ -378,6 +378,7 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
         }
     }
 
+    // sort the highlight places
     for (int i = 0; i < result.size(); ++i)
     {
         Quicksort(result[i].place, 0, result[i].place.size() - 1);
@@ -385,8 +386,25 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
 
     return result;
 }
+vector<string> removeElements(vector<string> input, vector<int> remove)
+{
+    vector<string> result;
+    bool check = 0;
+    for (int i = 0; i < input.size(); ++i)
+    {
+        check = 1;
+        for (int j = 0; j < remove.size(); ++j)
+        {
+            if (i == j)
+                check = 0;
+        }
 
+        if (check)
+            result.push_back(input[i]);
+    }
 
+    return result;
+}
 
 vector<int> findAnd(string ss1, string ss2, const fileData& file)
 {
@@ -400,7 +418,6 @@ vector<int> findAnd(string ss1, string ss2, const fileData& file)
     }
     return rs;
 }
-
 vector<int> findOr(string ss1, string ss2, const fileData& file)
 {
     vector<int> rs;
@@ -413,7 +430,6 @@ vector<int> findOr(string ss1, string ss2, const fileData& file)
     }
     return rs;
 }
-
 bool findNOT(string ss, const fileData& file)
 {
     vector<int> rs(normalSearch(file, ss));
@@ -423,8 +439,6 @@ bool findNOT(string ss, const fileData& file)
     }
     return 1;
 }
-
-
 vector<int> findPrice(int amountSearch, const fileData& file)
 {
     vector<int> place;
@@ -454,16 +468,22 @@ vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData&
 }
 
 
-bool isPrice(string input)
+bool isPriceRange(string input)
 {
+    bool check = 0;
     if (input[0] != '$')
         return 0;
+    bool counter = 1;
 
-    for (int i = 0; i < input.size(); ++i)
+    while (counter < input.size() && !isNumber(input[counter]))
     {
-        if (input[i] < '0' && input[i] > '9')
-            return 0;
+        ++counter;
     }
+}
 
+bool isNumber(char input) 
+{
+    if (input < '0' && input > '9')
+        return 0;
     return 1;
 }
