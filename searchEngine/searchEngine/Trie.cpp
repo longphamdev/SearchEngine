@@ -20,8 +20,36 @@ void trie::insertTrie(vector<string> input)
 trie::trie() {
     root = new trieNode;
 }
+
+trieNode::~trieNode() {
+    for (auto& node : child) {
+        if (node)
+            delete node;
+    }
+}
+bool isEmpty(trieNode* root) {
+    for (int i = 0; i < 38; i++) {
+        if (root->child[i])
+            return false;
+    }
+    return true;
+}
+trieNode *trie::deleteTrie(trieNode* node, int i) {
+    if (!node)
+        return NULL;
+    if (i = node->place.size()) {
+        if (isEmpty(node)) {
+            delete node;
+            node = NULL;
+        }
+        return node;
+    }
+    else {
+        return deleteTrie(node,i+1);
+    }
+}
 trie::~trie() {
-    delete[]root;
+    deleteTrie(root, 0);
 }
 price::price() {
     amount = 0;
@@ -54,3 +82,6 @@ void insert(struct trieNode* root, string key, int place)
     pCrawl->place.push_back(place);
 }
 
+fileData::fileData(vector<string> input, string fileName) {
+
+}

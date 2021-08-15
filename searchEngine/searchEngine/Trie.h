@@ -13,6 +13,7 @@ public:
     trieNode* child[38]; // 0-> 25 : letters, 26-> 35: numbers, 36,37: # $
     vector<int> place;
     bool existed = false;
+    ~trieNode();
 };
 
 
@@ -22,6 +23,7 @@ struct trie
 public:
     trieNode* root;
     void insertTrie(vector<string> input);
+    trieNode* deleteTrie(trieNode* root, int index=0);
     trie();
     ~trie();
 };
@@ -29,6 +31,7 @@ public:
 struct price {
     int amount;
     int place;
+    price();
 };
 
 struct fileData
