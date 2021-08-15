@@ -2,58 +2,111 @@
 
 using namespace std;
 
-
-
-
-fileData::fileData(string fileName)
+vector<fileData> getFileData()
 {
-    // phan nay la 1
-    vector<string> input;
-    string fileName = "‪";
-    string dir = "C:/Users/BarryAllen/Desktop/testthu.txt";
-    //dir+=fileName;
-    vector<int> price;
-    string s1;
+    vector<fileData> result;
+    ifstream fin;
+    string fileName;
+    string dir = "./Search Engine-Data/Search Engine-Data/";
+    fin.open("./Search Engine-Data/Search Engine-Data/___index.txt");
 
-    ifstream iFile;
-    iFile.open(dir);
-    char c;
-    string word;
-    int count = 0;
-    while (iFile >> word)
+    if (!fin.is_open())
     {
-        word = lowCase(word);
-
-        if (checkSymbol(word).size() != 0)
-            input.push_back(checkSymbol(word));
-    }
-    iFile.close();
-
-    for (int i = 0; i < input.size(); i++)
-    {
-        cout << input[i] << endl;
+        cout << "Cannot open file: " << "___index.txt";
+        exit(0);
     }
 
-
-    //phan nay theo yeu cau 2 
-
-    vector<string> input;
-    string fileName = "test.txt";
-    string dir = "C:/Users/BarryAllen/Desktop/";
-    dir += fileName;
-    ifstream iFile;
-    iFile.open(dir);
-    string line;
-    while (getline(iFile, line))
+    fin >> fileName;
+    while (!fin.eof())
     {
-        lowCase(line);
-        input.push_back(deleteTxt(line));
+        result.push_back(fileData(dir ,fileName));
     }
-    iFile.close();
-    for (int i = 0; i < input.size(); i++)
-    {
-        cout << input[i] << endl;
-    }
+
+    fin.close();
+
+    return result;
+}
+fileData getStopWord()
+{
+    string dir = "./data/";
+    return fileData(dir, "stopword.txt");
+}
+
+
+fileData::fileData(string dir ,string fileName)
+{
+
+   // phan nay la 1
+   vector<string> input;
+   dir+=fileName;
+
+   ifstream iFile;
+   iFile.open(dir);
+   string word;
+   while (iFile >> word)
+   {
+       word = lowCase(word);
+       if (checkSymbol(word).size() != 0)
+           input.push_back(checkSymbol(word));
+   }
+   iFile.close();
+
+
+   //phan nay theo yeu cau 2 
+
+//    vector<string> input2;
+//    string line =fileName;
+   
+//    for(int i=0;i<fileName.lenght();i++)
+//    {
+//        if()
+//     for(int j=0;j<)
+//     lowCase(line);
+    
+//     input.push_back(deleteTxt(line));
+//     }
+
+
+
+
+
+
+
+
+string line =fileName;
+ vector<string> input2(splitWord(line));
+for(int i=0;i<input2.size();i++)
+{
+   lowCase(input2[i]);
+}
+
+string temp=deleteTxt(input2[input2.size()-1]);
+input2.pop_back();
+input2.push_back(temp);
+for(int i=0;i<input2.size();i++)
+{
+   cout<<input2[i]<<endl;
+}
+//--------------------------------------------
+this->titleData.insertTrie(input2);
+
+string tmpstring;
+   price tmpPrice;
+   for (int i = 0; i < input.size(); ++i)
+   {
+       if (isPrice(input[i]))
+       {
+           tmpstring = "";
+           
+           for (int j = 1; j < input[i].size(); ++j)
+           {
+               tmpstring += input[i][j];
+           }
+
+           tmpPrice.amount = stoi(tmpstring);
+           tmpPrice.place = i;
+       }
+   }
 
 }
 
@@ -71,7 +124,6 @@ string lowCase(string s)
     }
     return s;
 }
-
 
 string checkSymbol(string s)
 {
@@ -97,7 +149,6 @@ string checkSymbol(string s)
     return s1;
 }
 
-
 string deleteTxt(string s)
 {
     string s1;
@@ -109,3 +160,32 @@ string deleteTxt(string s)
     return s1;
 }
 
+vector<string> splitWord(string S)
+{
+   vector<string> rs;
+   string T;  
+   
+    
+   
+    stringstream X(S); 
+    while (getline(X, T, ' ')) {  
+
+     rs.push_back(T);
+    }  
+   return rs;
+}
+
+
+bool isPrice(string input)
+{
+    if (input[0] != '$')
+        return 0;
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+        if (input[i] < '0' && input[i] > '9')
+            return 0;
+    }
+
+    return 1;
+}

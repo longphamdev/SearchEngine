@@ -35,6 +35,8 @@ trie::~trie() {
 
 void deleteTrie(trieNode* root)
 {
+    if (root == NULL)
+        return;
     for (int i = 0; i < 38; ++i)
     {
         deleteTrie(root->child[i]);

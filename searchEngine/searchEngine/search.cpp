@@ -467,19 +467,7 @@ vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData&
     return place;
 }
 
-bool isPrice(string input)
-{
-    if (input[0] != '$')
-        return 0;
 
-    for (int i = 0; i < input.size(); ++i)
-    {
-        if (input[i] < '0' && input[i] > '9')
-            return 0;
-    }
-
-    return 1;
-}
 bool isPriceRange(string input)
 {
     bool check = 0;
