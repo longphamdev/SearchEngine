@@ -32,10 +32,21 @@ void preprocess_exactSearch(string& input);
 vector<int> exactSearch(const fileData& file, const vector<string>& query);
 
 //sorting
-int getMax(vector<int> &arr);
-void countSort(vector<int>& arr, int exp);
-void radixsort(vector<int>& arr);
+void swap(int* a, int* b);
+int Partition(vector<int>& v, int start, int end);
+void Quicksort(vector<int>& v, int start, int end);
 
 //void testDisplay(const string &fileName,  const vector<int> &places);
 
+
+vector<int> findAnd(string ss1, string ss2, const fileData& file);
+vector<int> findOr(string ss1, string ss2, const fileData& file);
+bool findNOT(string ss, const fileData& file);
+vector<int> findPrice(int amountSearch, const fileData& file);
+vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData& file);
+
+vector<string> removeElements(vector<string> input, vector<int> remove);
+bool isPrice(string input);
+bool isPriceRange(string input);
+bool isNumber(char input);
 #endif
