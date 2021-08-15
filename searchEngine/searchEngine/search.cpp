@@ -24,7 +24,6 @@ void preprocess_exactSearch(string& input)
 
     input = tmp;
 }
-
 void preprocess(string& input)
 {
     int Aa = 'A' - 'a';
@@ -49,7 +48,6 @@ void preprocess(string& input)
 
     input = tmp;
 }
-
 vector<string> stringToWord(const string& input)
 {
     vector<string> result;
@@ -68,9 +66,6 @@ vector<string> stringToWord(const string& input)
 
     return result;
 }
-
-// 
-// 
 
 vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
     const vector<fileData>& synonymData, const string& query)
@@ -307,6 +302,7 @@ vector<int> exactSearch(const fileData& file, const vector<string>& query)
         for (int j = 0; j < query.size(); ++j)
         {
             fin >> tmp;
+            preprocess_exactSearch(tmp);
             if (tmp != query[i + j])
                 break;
 
@@ -455,6 +451,7 @@ vector<int> findPrice(int amountSearch, const fileData& file)
     }
     return place;
 }
+
 vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData& file)
 {
     vector<int> place;
@@ -495,6 +492,7 @@ bool isPriceRange(string input)
         ++counter;
     }
 }
+
 bool isNumber(char input) 
 {
     if (input < '0' && input > '9')
