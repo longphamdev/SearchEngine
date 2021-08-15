@@ -24,27 +24,24 @@ bool trie::isEmpty(trieNode*root) {
     }
     return true;
 }
-trieNode* trie::deleteTrie(trieNode* node, int i) {
-    if (!node)
-        return NULL;
-    if (i = node->place.size()) {
-        if (isEmpty(node)) {
-            delete node;
-            node = NULL;
-        }
-        return root;
-    }
-    else
-        return deleteTrie(node, i + 1);
-}
+
 trie::trie() {
     root = new trieNode;
 }
 
 trie::~trie() {
-    deleteTrie(root,0);
+    deleteTrie(root);
 }
 
+void deleteTrie(trieNode* root)
+{
+    for (int i = 0; i < 38; ++i)
+    {
+        deleteTrie(root->child[i]);
+    }
+
+    delete root;
+}
 
 void insert(struct trieNode* root, string key, int place)
 {
