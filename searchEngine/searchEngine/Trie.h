@@ -21,6 +21,8 @@ struct trie
 public:
     trieNode* root;
     void insertTrie(vector<string> input);
+    trieNode* deleteTrie(trieNode* node, int i);
+    bool isEmpty(trieNode*root);
     trie();
     ~trie();
 };
