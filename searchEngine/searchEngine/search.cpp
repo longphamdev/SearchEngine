@@ -75,7 +75,15 @@ vector<string> stringToWord(const string& input)
 vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
     const vector<fileData>& synonymData, const string& query)
 {
+    //init the searchData
     vector<searchData>  result;
+    searchData tmpS;
+    tmpS.score = 0;
+    for (int i = 0; i < docData.size(); ++i)
+    {
+        tmpS.fileName = docData[i].fileName;
+        result.push_back(tmpS);
+    }
 
 	//cut the query
     vector<string> cutQuery = stringToWord(query);
@@ -120,13 +128,26 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
         {
             preprocess(cutQuery[0]);
             preprocess(cutQuery[2]);
-            //call AND search
+            for (int j = 0; j < docData.size(); ++j)
+            {
+                result[j].place = findAnd(cutQuery[0], cutQuery[2], docData[j]);
+                result[j].score = result[j].place.size();
+            }
+
+            return selectTop5(result);
+                
         }
         else if (cutQuery[1] == "OR")
         {
             preprocess(cutQuery[0]);
             preprocess(cutQuery[2]);
-            //call OR search
+            for (int j = 0; j < docData.size(); ++j)
+            {
+                result[j].place = findOr(cutQuery[0], cutQuery[2], docData[j]);
+                result[j].score = result[j].place.size();
+
+                return selectTop5(result);
+            }
         }
     }
 
@@ -147,20 +168,74 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
     
  
 
-
+    vector<int> remove;
+    string tmp;
     //NOT *
+    for (int i = 0; i < cutQuery.size(); ++i)
+    {
+        if (cutQuery[i][0] == '-')
+        {
+            tmp = "";
+            remove.push_back(i);
+
+            for (int j = 1; j < cutQuery[i].size(); ++j)
+            {
+                tmp = tmp + cutQuery[i][j];
+            }
+
+            for (int j = 0; j < docData.size(); ++j)
+            {
+                if (findNOT(tmp, docData[j]))
+                {
+                    result[j].score -= 5;
+                }
+                else result[j].score += 5;
+            }
+        }
+    }
 
     //search price range *
 
     //search price *
+    for (int i = 0; i < cutQuery.size(); ++i)
+    {
+        if (isPrice(cutQuery[i]))
+        {
+            tmp = "";
+            remove.push_back(i);
+
+            for (int j = 1; j < cutQuery[i].size(); ++j)
+            {
+                tmp = tmp + cutQuery[i][j];
+            }
+
+            for (int j = 0; j < docData.size(); ++j)
+            {
+                tmpSearchResult = findPrice(stoi(tmp), docData[j]);
+                result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+                if (tmpSearchResult.size() == 0)
+                {
+                    result[j].score -= 5;
+                }
+                else result[j].score += tmpSearchResult.size();
+            }
+        }
+    }
 
     //synonym *
 
     //normal search
+    for (int i = 0; i < cutQuery.size(); ++i)
+    {
+        for (int j = 0; j < docData.size(); ++j)
+        {
+            tmpSearchResult = normalSearch(docData[j], cutQuery[i]);
+            result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+        }
+    }
 
     //select top 5 and return
-    
-	return result;
+	return selectTop5(result);
 }
 
 vector<int> normalSearch(const fileData& file, const string& key)
@@ -189,8 +264,6 @@ vector<int> normalSearch(const fileData& file, const string& key)
     }
     return (pCrawl->place);
 }
-
-
 vector<int> exactSearch(const fileData& file, const vector<string>& query)
 {
     vector<int> empty;
@@ -252,57 +325,35 @@ vector<int> exactSearch(const fileData& file, const vector<string>& query)
     return empty;
 }
 
-
-int getMax(vector<int>& arr)
+void swap(int* a, int* b)
 {
-    int n = arr.size();
-    int mx = arr[0];
-    for (int i = 1; i < n; i++)
-        if (arr[i] > mx)
-            mx = arr[i];
-    return mx;
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
-void countSort(vector<int>& arr, int exp)
-{
-    int n = arr.size();
-    int * output = new int[n]; // output array
+int Partition(vector<int>& v, int start, int end) {
 
-    int i, count[10] = { 0 };
+    int pivot = end;
+    int j = start;
+    for (int i = start; i < end; ++i) {
+        if (v[i] < v[pivot]) {
+            swap(v[i], v[j]);
+            ++j;
+        }
+    }
+    swap(v[j], v[pivot]);
+    return j;
 
-    // Store count of occurrences in count[]
-    for (i = 0; i < n; i++)
-        count[(arr[i] / exp) % 10]++;
+}
+void Quicksort(vector<int>& v, int start, int end) {
 
-    // Change count[i] so that count[i] now contains actual
-    //  position of this digit in output[]
-    for (i = 1; i < 10; i++)
-        count[i] += count[i - 1];
-
-    // Build the output array
-    for (i = n - 1; i >= 0; i--) {
-        output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-        count[(arr[i] / exp) % 10]--;
+    if (start < end) {
+        int p = Partition(v, start, end);
+        Quicksort(v, start, p - 1);
+        Quicksort(v, p + 1, end);
     }
 
-    // Copy the output array to arr[], so that arr[] now
-    // contains sorted numbers according to current digit
-    for (i = 0; i < n; i++)
-        arr[i] = output[i];
-
-    delete [] output;
 }
-void radixsort(vector<int>& arr)
-{
-    int n = arr.size();
-    int m = getMax(arr);
-
-    // Do counting sort for every digit. Note that instead
-    // of passing digit number, exp is passed. exp is 10^i
-    // where i is current digit number
-    for (int exp = 1; m / exp > 0; exp *= 10)
-        countSort(arr, exp);
-}
-
 
 vector<searchData> selectTop5(vector<searchData>& searchResult)
 {
@@ -315,7 +366,7 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
             positiveScore.push_back(searchResult[i].score);
     }
 
-    radixsort(positiveScore);
+    Quicksort(positiveScore, 0, positiveScore.size() - 1);
 
     int n;
     if (positiveScore.size() < 5)
@@ -331,5 +382,122 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
         }
     }
 
+    // sort the highlight places
+    for (int i = 0; i < result.size(); ++i)
+    {
+        Quicksort(result[i].place, 0, result[i].place.size() - 1);
+    }
+
     return result;
+}
+vector<string> removeElements(vector<string> input, vector<int> remove)
+{
+    vector<string> result;
+    bool check = 0;
+    for (int i = 0; i < input.size(); ++i)
+    {
+        check = 1;
+        for (int j = 0; j < remove.size(); ++j)
+        {
+            if (i == j)
+                check = 0;
+        }
+
+        if (check)
+            result.push_back(input[i]);
+    }
+
+    return result;
+}
+
+vector<int> findAnd(string ss1, string ss2, const fileData& file)
+{
+    vector<int> rs;
+    vector<int> resultSs1(normalSearch(file, ss1));
+    vector<int> resultSs2(normalSearch(file, ss2));
+    if (!resultSs1.empty() && !resultSs2.empty())
+    {
+        rs.insert(rs.end(), resultSs1.begin(), resultSs1.end());
+        rs.insert(rs.end(), resultSs2.begin(), resultSs2.end());
+    }
+    return rs;
+}
+vector<int> findOr(string ss1, string ss2, const fileData& file)
+{
+    vector<int> rs;
+    vector<int> resultSs1(normalSearch(file, ss1));
+    vector<int> resultSs2(normalSearch(file, ss2));
+    if (!resultSs1.empty() && !resultSs2.empty())
+    {
+        rs.insert(rs.end(), resultSs1.begin(), resultSs1.end());
+        rs.insert(rs.end(), resultSs2.begin(), resultSs2.end());
+    }
+    return rs;
+}
+bool findNOT(string ss, const fileData& file)
+{
+    vector<int> rs(normalSearch(file, ss));
+    if (rs.empty() == 1)
+    {
+        return 0;
+    }
+    return 1;
+}
+vector<int> findPrice(int amountSearch, const fileData& file)
+{
+    vector<int> place;
+    for (int i = 0; i < file.priceData.size(); i++)
+    {
+        if (amountSearch == file.priceData[i].amount)
+        {
+            place.push_back(file.priceData[i].place);
+        }
+    }
+    return place;
+}
+vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData& file)
+{
+    vector<int> place;
+    int tempAmount;
+    for (int i = 0; i < file.priceData.size(); i++)
+    {
+        tempAmount = file.priceData[i].amount;
+        if (amountSearch1 <= tempAmount && amountSearch2 >= tempAmount)
+        {
+            place.push_back(file.priceData[i].place);
+        }
+    }
+    return place;
+}
+
+bool isPrice(string input)
+{
+    if (input[0] != '$')
+        return 0;
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+        if (input[i] < '0' && input[i] > '9')
+            return 0;
+    }
+
+    return 1;
+}
+bool isPriceRange(string input)
+{
+    bool check = 0;
+    if (input[0] != '$')
+        return 0;
+    bool counter = 1;
+
+    while (counter < input.size() && !isNumber(input[counter]))
+    {
+        ++counter;
+    }
+}
+bool isNumber(char input) 
+{
+    if (input < '0' && input > '9')
+        return 0;
+    return 1;
 }
