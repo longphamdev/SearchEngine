@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="fileHandling.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="query1.h" />
     <ClInclude Include="search.h" />
     <ClInclude Include="Trie.h" />
@@ -151,6 +152,9 @@
     <ClCompile Include="search.cpp" />
     <ClCompile Include="Trie.cpp" />
     <ClCompile Include="UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
