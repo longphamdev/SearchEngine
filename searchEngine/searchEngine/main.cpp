@@ -16,6 +16,8 @@ int main()
 	//getline(cin, query);
 
 	vector<fileData> docData = getFileData();
-
+	//vector<fileData> test;
+	//fileData tmp = getStopWord();
+	//test.push_back(tmp);
 	return 0;
 }

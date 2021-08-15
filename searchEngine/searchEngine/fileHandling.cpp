@@ -15,12 +15,18 @@ vector<fileData> getFileData()
         cout << "Cannot open file: " << "___index.txt";
         exit(0);
     }
-
-    fin >> fileName;
+    int count = 0;
+    getline(fin , fileName);
     while (!fin.eof())
     {
         result.push_back(fileData(dir ,fileName));
-        fin >> fileName;
+        getline(fin, fileName);
+        ++count;
+        if (count % 1000 == 0)
+        {
+            cout << count << endl;
+        }
+        
     }
 
     fin.close();
