@@ -48,4 +48,5 @@ vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData&
 vector<string> removeElements(vector<string> input, vector<int> remove);
 bool isPrice(string input);
 bool isPriceRange(string input);
+bool isNumber(char input);
 #endif

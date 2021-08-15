@@ -5,13 +5,13 @@
 #include <vector>
 #include <string>
 using namespace std;
+
 struct trieNode
 {
 public:
     trieNode();
     trieNode* child[38]; // 0-> 25 : letters, 26-> 35: numbers, 36,37: # $
-    vector<int> place;
-    bool existed = false;
+    vector<int> place; 
 };
 
 

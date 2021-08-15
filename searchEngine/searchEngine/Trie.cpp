@@ -24,7 +24,7 @@ trie::trie() {
 }
 
 trie::~trie() {
-    delete[]root;
+    delete[] root;
 }
 
 
@@ -54,4 +54,3 @@ void insert(struct trieNode* root, string key, int place)
     // mark last node as leaf
     pCrawl->place.push_back(place);
 }
-
