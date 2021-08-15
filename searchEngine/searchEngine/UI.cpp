@@ -1,9 +1,4 @@
-#include <iostream>
-#include <conio.h>
-#include <Windows.h>
-#include <fstream>
-#include <string>
-using namespace std;
+#include "UI.h"
 
 
 
@@ -115,6 +110,6 @@ void DrawMain() {
 		cout << (char)223;
 	}
 
-
+	
 }
 
