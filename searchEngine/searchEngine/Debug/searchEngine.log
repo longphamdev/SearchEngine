@@ -1,13 +1,2 @@
-﻿ Trie.cpp
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\Trie.cpp(69,23): warning C4018: '<': signed/unsigned mismatch
-  fileHandling.cpp
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(72,18): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(86,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(92,30): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(111,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(146,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(175,23): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  searchEngine.vcxproj -> C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe
-
+﻿  main.cpp
+  searchEngine.vcxproj -> C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe
