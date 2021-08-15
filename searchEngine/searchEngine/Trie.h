@@ -35,6 +35,6 @@ void insert(struct trieNode* root, string key, int place);
 
 // function for stopword
 
-//function for synonyms
+// function for synonyms
 
 #endif

@@ -20,6 +20,7 @@ vector<fileData> getFileData()
     while (!fin.eof())
     {
         result.push_back(fileData(dir ,fileName));
+        fin >> fileName;
     }
 
     fin.close();
@@ -42,6 +43,12 @@ fileData::fileData(string dir ,string fileName)
 
    ifstream iFile;
    iFile.open(dir);
+   if (!iFile.is_open())
+   {
+       cout << "cannot open file: " << fileName;
+       exit(0);
+   }
+
    string word;
    while (iFile >> word)
    {
@@ -51,49 +58,27 @@ fileData::fileData(string dir ,string fileName)
    }
    iFile.close();
 
-
-   //phan nay theo yeu cau 2 
-
-//    vector<string> input2;
-//    string line =fileName;
-   
-//    for(int i=0;i<fileName.lenght();i++)
-//    {
-//        if()
-//     for(int j=0;j<)
-//     lowCase(line);
-    
-//     input.push_back(deleteTxt(line));
-//     }
+   this->data.insertTrie(input);
 
 
+    string line =fileName;
+    vector<string> input2(splitWord(line));
+    for(int i=0;i<input2.size();i++)
+    {
+        lowCase(input2[i]);
+    }
 
+    string temp=deleteTxt(input2[input2.size()-1]);
+    input2.pop_back();
+    input2.push_back(temp);
 
+    //--------------------------------------------
+    this->titleData.insertTrie(input2);
 
-
-
-
-string line =fileName;
- vector<string> input2(splitWord(line));
-for(int i=0;i<input2.size();i++)
-{
-   lowCase(input2[i]);
-}
-
-string temp=deleteTxt(input2[input2.size()-1]);
-input2.pop_back();
-input2.push_back(temp);
-for(int i=0;i<input2.size();i++)
-{
-   cout<<input2[i]<<endl;
-}
-//--------------------------------------------
-this->titleData.insertTrie(input2);
-
-string tmpstring;
-   price tmpPrice;
-   for (int i = 0; i < input.size(); ++i)
-   {
+    string tmpstring;
+    price tmpPrice;
+    for (int i = 0; i < input.size(); ++i)
+    {
        if (isPrice(input[i]))
        {
            tmpstring = "";
@@ -106,7 +91,7 @@ string tmpstring;
            tmpPrice.amount = stoi(tmpstring);
            tmpPrice.place = i;
        }
-   }
+    }
 
 }
 
