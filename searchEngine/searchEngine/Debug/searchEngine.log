@@ -1,4 +1,17 @@
 ﻿  fileHandling.cpp
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(12,23): warning C4566: character represented by universal-character-name '\u202A' cannot be represented in the current code page (1252)
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(12,23): error C2082: redefinition of formal parameter 'fileName'
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(32,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(40,20): error C2086: 'std::vector<std::string,std::allocator<std::string>> input': redefinition
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(11): message : see declaration of 'input'
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(41,23): error C2082: redefinition of formal parameter 'fileName'
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(42,12): error C2374: 'dir': redefinition; multiple initialization
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(13): message : see declaration of 'dir'
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(44,14): error C2086: 'std::ifstream iFile': redefinition
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(18): message : see declaration of 'iFile'
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(53,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(67,23): warning C4018: '<': signed/unsigned mismatch
+D:\projectCS163\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(104,23): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   query1.cpp
 D:\projectCS163\SearchEngine\searchEngine\searchEngine\query1.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
@@ -25,4 +38,3 @@ D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(243,35): warni
 D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(312,23): warning C4018: '<': signed/unsigned mismatch
 D:\projectCS163\SearchEngine\searchEngine\searchEngine\search.cpp(325,23): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  searchEngine.vcxproj -> D:\projectCS163\SearchEngine\searchEngine\Debug\searchEngine.exe

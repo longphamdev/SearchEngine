@@ -24,10 +24,13 @@ struct fileData
 {
 public:
     trie data;
+    trie titleData;
     string fileName;
     vector<price> priceData;
-    fileData(vector<string> input, string fileName);
+    fileData(string fileName);
 };
+
+
 
 
 
@@ -38,4 +41,10 @@ public:
 vector<fileData> getFileData(string folderName);
 
 int get_index(char key);
+
+
+//--------------------ham ho tro
+string lowCase(string s);
+string checkSymbol(string s);
+string deleteTxt(string s);
 #endif
