@@ -118,6 +118,28 @@ const string& query)
 
     //// OR *
 
+    if (cutQuery.size() == 0)
+        return result;
+
+    if (cutQuery[0] == "intitle:")
+    {
+        for (int i = 1; i < cutQuery.size(); ++i)
+        {
+            preprocess(cutQuery[i]);
+
+            for (int j = 0; j < docData.size(); ++j)
+            {
+                bool found = intitleSearch(docData[j], cutQuery[i]);
+                if (found)
+                {
+                    result[j].score += 1;
+                }
+            }
+        }
+
+        return selectTop5(result);
+    }
+
     if (cutQuery.size() == 3)
     {
         if (cutQuery[1] == "AND")
@@ -583,7 +605,6 @@ void displayTest(searchData searchResult)
 
 }
 
-
 vector<string> synonymSearch(const synonymData& file, const string& key)
 {
     vector<string> empty;
@@ -613,4 +634,32 @@ vector<string> synonymSearch(const synonymData& file, const string& key)
     return empty;
 
 
+}
+
+bool intitleSearch(fileData file, string key)
+{
+    trieNode* pCrawl = file.titleData.root;
+    if (pCrawl == NULL)
+        return 0;
+    for (int i = 0; i < key.length(); i++)
+    {
+
+        int index;
+
+        if (key[i] >= 'a' && key[i] <= 'z')
+            index = key[i] - 'a';
+
+        else if (key[i] >= '0' && key[i] <= '9')
+            index = 26 + key[i] - '0';
+
+        else if (key[i] == '#')
+            index = 36;
+        else index = 37;
+
+        if (!pCrawl->child[index])
+            return 0;
+
+        pCrawl = pCrawl->child[index];
+    }
+    return (pCrawl->place.size()) > 0;
 }

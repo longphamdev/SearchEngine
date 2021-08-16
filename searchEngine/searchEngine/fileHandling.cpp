@@ -68,7 +68,7 @@ fileData::fileData(string dir ,string fileName)
             vector<string> input2(splitWord(line));
             for(int i=0;i<input2.size();i++)
             {
-                lowCase(input2[i]);
+                input2[i] = lowCase(input2[i]);
             }
 
             string temp=deleteTxt(input2[input2.size()-1]);
