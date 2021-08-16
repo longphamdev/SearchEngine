@@ -56,7 +56,7 @@ fileData::fileData(string dir ,string fileName)
         while (iFile >> word)
         {
             word = lowCase(word);
-            if (checkSymbol(word).size() != 0)
+            
             input.push_back(checkSymbol(word));
         }
             iFile.close();

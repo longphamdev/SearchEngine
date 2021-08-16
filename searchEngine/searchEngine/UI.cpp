@@ -87,7 +87,7 @@ void DrawMain() {
 	GotoXY(35, 9);
 	cout << "Pham Thien Long - 19125xxx" << endl;
 	GotoXY(35, 10);
-	cout << "Vu Ngoc Tuan - 19125xxx" << endl;
+	cout << "Vu Ngoc Tuan - 19125128" << endl;
 	GotoXY(35, 11);
 	cout << "Nguyen Hoang Son - 19125118" << endl;
 	GotoXY(35, 12);
@@ -125,7 +125,7 @@ void displaySearchResult(ifstream& fin, vector<searchData> result) {
 			cout << result[i].fileName << endl;
 			TextColor(14);
 			string temp;
-			fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[i].fileName);
+			fin.open("./Search Engine-Data/Search Engine-Data/" + result[i].fileName);
 			if (!fin.is_open()) {
 				cout << "Can not open file";
 			}
@@ -148,7 +148,7 @@ void displaySearchResult(ifstream& fin, vector<searchData> result) {
 
 		TextColor(7);
 		string temp;
-		fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[choose - 1].fileName);
+		fin.open("./Search Engine-Data/Search Engine-Data/" + result[choose - 1].fileName);
 		if (!fin.is_open()) {
 			cout << "Can not open file";
 		}
