@@ -152,7 +152,7 @@ void displaySearchResult(ifstream& fin, vector<searchData> result) {
 		vector<int> tempPlace = result[choose - 1].place;
 		int place = 0;
 		while (!fin.eof()) {
-			place++;
+			
 			fin >> temp;
 			for (int i = 0; i < tempPlace.size(); i++) {
 				if (place == tempPlace[i]) {
@@ -164,6 +164,7 @@ void displaySearchResult(ifstream& fin, vector<searchData> result) {
 				}
 			}
 			cout << temp << " ";
+			place++;
 		}
 	}
 	fin.close();
