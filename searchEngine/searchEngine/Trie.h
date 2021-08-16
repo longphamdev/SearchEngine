@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 using namespace std;
 
 struct trieNode
@@ -22,6 +23,7 @@ public:
     trieNode* root;
     void insertTrie(vector<string> input);
     bool isEmpty(trieNode*root);
+    trie(const trie& origin);
     trie();
     ~trie();
 };
@@ -32,6 +34,7 @@ void deleteTrie(trieNode* root);
 
 void insert(struct trieNode* root, string key, int place);
 
+void copyTrieNode(trieNode* origin, trieNode* copy);
 
 // function for stopword
 

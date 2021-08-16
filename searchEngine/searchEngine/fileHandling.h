@@ -29,6 +29,7 @@ public:
     string fileName;
     vector<price> priceData;
     fileData(string dir, string fileName);
+    fileData(){}
 };
 
 
