@@ -182,3 +182,65 @@ bool isPrice(string input)
 
     return 1;
 }
+
+
+vector<string> splitWordForSynonym(string S)
+{
+    vector<string> rs;
+    string T;
+
+    for (int i = 0; i < S.length(); i++)
+    {
+        if (S[i] == '	')
+        {
+            S[i] = ' ';
+        }
+    }
+    stringstream X(S);
+    while (getline(X, T, ' '))
+    {
+        rs.push_back(lowCase(T));
+    }
+    return rs;
+}
+
+vector<synonymData> getSynonym()
+{
+    vector<synonymData> rs;
+    string str;
+    vector<vector<string>> s;
+    s.resize(200);
+    ifstream iFile;
+    ofstream oFile;
+    int i = 0;
+
+    iFile.open("./data/synonym.txt");
+    if (!iFile.is_open())
+    {
+        cout << "Can not open file. " << endl;
+    }
+    else
+    {
+        vector<string> temp;
+
+        while (getline(iFile, str))
+        {
+            temp = splitWord(str);
+            s[i].assign(temp.begin(), temp.end());
+            temp.clear();
+            i++;
+        }
+    }
+    iFile.close();
+
+    for (int k = 0; k < i; k++)
+    {
+        for (int j = 0; j < s[k].size(); j++)
+        {
+            cout << s[k][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return rs;
+}

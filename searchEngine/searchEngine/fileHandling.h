@@ -53,4 +53,5 @@ string checkSymbol(string s);
 string deleteTxt(string s);
 vector<string> splitWord(string S);
 bool isPrice(string input);
+vector<string> splitWordForSynonym(string S);
 #endif
