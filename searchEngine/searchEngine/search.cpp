@@ -367,7 +367,7 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
     }
 
     Quicksort(positiveScore, 0, positiveScore.size() - 1);
-    
+        
     int n;
     if (positiveScore.size() < 5)
         n = positiveScore.size();
