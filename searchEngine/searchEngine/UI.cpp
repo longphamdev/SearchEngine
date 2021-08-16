@@ -1,9 +1,5 @@
 #include "UI.h"
 
-
-
-
-
 void resizeConsole(int width, int height)
 {
 	HWND console = GetConsoleWindow();
@@ -83,9 +79,9 @@ void DrawMain() {
 	showImage("text.txt");
 
 	GotoXY(35, 8);
-	cout << "Nguyen Ngoc Trung  - 19125xxx" << endl;
+	cout << "Nguyen Ngoc Trung  - 19125126" << endl;
 	GotoXY(35, 9);
-	cout << "Pham Thien Long - 19125xxx" << endl;
+	cout << "Pham Thien Long - 19125104" << endl;
 	GotoXY(35, 10);
 	cout << "Vu Ngoc Tuan - 19125128" << endl;
 	GotoXY(35, 11);

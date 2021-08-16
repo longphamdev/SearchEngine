@@ -27,25 +27,10 @@ int main()
 		cout << endl;
 		displayOption(status);
 
-	    if (status == 'x') {
+		switch (status) {
+		case 'x':
 			exit(1);
-	    }
-	    if (status == 'y') {
-			system("CLS");
-		    DrawMain();
-			GotoXY(21, 15);
-			cin.ignore();
-			getline(cin, query);
-			Sleep(500);
-			system("CLS");
-	    }
-		if (status == 'n') {
-			while (status == 'n') {
-				system("CLS");
-				displaySearchResult(fin,result);
-				cout << endl;
-				displayOption(status);
-			}
+		case 'y':
 			system("CLS");
 			DrawMain();
 			GotoXY(21, 15);
@@ -53,7 +38,28 @@ int main()
 			getline(cin, query);
 			Sleep(500);
 			system("CLS");
+			break;
+		case 'n':
+			while (status == 'n') {
+				system("CLS");
+				displaySearchResult(fin, result);
+				cout << endl;
+				displayOption(status);
+			}
+			if (status == 'x') exit(0);
+			system("CLS");
+			DrawMain();
+			GotoXY(21, 15);
+			cin.ignore();
+			getline(cin, query);
+			Sleep(500);
+			system("CLS");
+			break;
+		default:
+			system("CLS");
+			break;
 		}
+
     }
 
 
