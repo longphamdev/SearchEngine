@@ -19,8 +19,8 @@ struct searchData
 };
 
 // not done
-vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
-	const vector<fileData>& synonymData, const string& query);
+vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData,
+const string& query);
 
 vector<searchData> selectTop5(vector<searchData>& searchResult);
 
@@ -48,4 +48,7 @@ vector<int> findRangePrice(int amountSearch1, int amountSearch2, const fileData&
 vector<string> removeElements(vector<string> input, vector<int> remove);
 bool isPriceRange(string input);
 bool isNumber(char input);
+
+void displayTest(searchData searchResult);
+
 #endif

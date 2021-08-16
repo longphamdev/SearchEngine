@@ -9,12 +9,13 @@ trieNode::trieNode()
     }
 }
 
-void copyTrieNode(trieNode* origin, trieNode* copy) 
+void copyTrieNode(trieNode* origin, trieNode* &copy) 
 {
     if (origin)
         copy = new trieNode;
     else return;
 
+    copy->place = origin->place;
     for (int i = 0; i < 38; ++i)
     {
         copyTrieNode(origin->child[i], copy->child[i]);

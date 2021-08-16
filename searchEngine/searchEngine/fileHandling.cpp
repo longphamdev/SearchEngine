@@ -35,8 +35,8 @@ vector<fileData> getFileData()
 }
 fileData getStopWord()
 {
-    string dir = "./data/";
-    return fileData(dir, "stopword.txt");
+    string dir = "./Search Engine-Data/Search Engine-Data/";
+    return fileData(dir, "000.txt");
 }
 
 
@@ -46,58 +46,60 @@ fileData::fileData(string dir ,string fileName)
    // phan nay la 1
    vector<string> input;
    dir+=fileName;
+   this->fileName = fileName;
 
    ifstream iFile;
    iFile.open(dir);
-   if (!iFile.is_open())
+   if (iFile.is_open())
    {
-       cout << "cannot open file: " << fileName;
-       exit(0);
-   }
+       string word;
+        while (iFile >> word)
+        {
+            word = lowCase(word);
+            if (checkSymbol(word).size() != 0)
+            input.push_back(checkSymbol(word));
+        }
+            iFile.close();
 
-   string word;
-   while (iFile >> word)
-   {
-       word = lowCase(word);
-       if (checkSymbol(word).size() != 0)
-           input.push_back(checkSymbol(word));
-   }
-   iFile.close();
-
-   this->data.insertTrie(input);
+            this->data.insertTrie(input);
 
 
-    string line =fileName;
-    vector<string> input2(splitWord(line));
-    for(int i=0;i<input2.size();i++)
-    {
-        lowCase(input2[i]);
-    }
+            string line =fileName;
+            vector<string> input2(splitWord(line));
+            for(int i=0;i<input2.size();i++)
+            {
+                lowCase(input2[i]);
+            }
 
-    string temp=deleteTxt(input2[input2.size()-1]);
-    input2.pop_back();
-    input2.push_back(temp);
+            string temp=deleteTxt(input2[input2.size()-1]);
+            input2.pop_back();
+            input2.push_back(temp);
 
-    //--------------------------------------------
-    this->titleData.insertTrie(input2);
+            //--------------------------------------------
+            this->titleData.insertTrie(input2);
 
-    string tmpstring;
-    price tmpPrice;
-    for (int i = 0; i < input.size(); ++i)
-    {
-       if (isPrice(input[i]))
-       {
-           tmpstring = "";
+            string tmpstring;
+            price tmpPrice;
+            for (int i = 0; i < input.size(); ++i)
+            {
+                if (isPrice(input[i]))
+                {
+                    tmpstring = "";
            
-           for (int j = 1; j < input[i].size(); ++j)
-           {
-               tmpstring += input[i][j];
-           }
+                    for (int j = 1; j < input[i].size(); ++j)
+                    {
+                        tmpstring += input[i][j];
+                    }
 
-           tmpPrice.amount = stoi(tmpstring);
-           tmpPrice.place = i;
+                  tmpPrice.amount = stoi(tmpstring);
+                  tmpPrice.place = i;
        }
     }
+       //exit(0);
+   }
+   else
+        cout << "cannot open file: " << fileName << endl;
+   
 
 }
 

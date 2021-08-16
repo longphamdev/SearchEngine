@@ -63,12 +63,13 @@ vector<string> stringToWord(const string& input)
         else
             tmp += input[i];
     }
+    result.push_back(tmp);
 
     return result;
 }
 
-vector<searchData> search(const vector<fileData>& docData, const vector<fileData>& stopwordData,
-    const vector<fileData>& synonymData, const string& query)
+vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData,
+const string& query)
 {
     //init the searchData
     vector<searchData>  result;
@@ -85,66 +86,66 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
 
 
     vector <int> tmpSearchResult;
-    //exact search (and wild card I guess...)
-    string firstWord = cutQuery[0];
-    string lastWord = cutQuery[cutQuery.size() - 1];
-    if (firstWord[0] == '"' && lastWord[lastWord.size() - 1] == '"')
-    {
-        // preprocess the query first
-        for (int i = 0; i < cutQuery.size(); ++i)
-        {
-            preprocess_exactSearch(cutQuery[i]);
-        }
+    ////exact search (and wild card I guess...)
+    //string firstWord = cutQuery[0];
+    //string lastWord = cutQuery[cutQuery.size() - 1];
+    //if (firstWord[0] == '"' && lastWord[lastWord.size() - 1] == '"')
+    //{
+    //    // preprocess the query first
+    //    for (int i = 0; i < cutQuery.size(); ++i)
+    //    {
+    //        preprocess_exactSearch(cutQuery[i]);
+    //    }
 
-        // then search all the doc
-        for (int i = 0; i < docData.size(); ++i)
-        {
-            result[i].place = exactSearch(docData[i], cutQuery);           //scoring each file
-            result[i].score = result[i].place.size();
-        }
+    //    // then search all the doc
+    //    for (int i = 0; i < docData.size(); ++i)
+    //    {
+    //        result[i].place = exactSearch(docData[i], cutQuery);           //scoring each file
+    //        result[i].score = result[i].place.size();
+    //    }
 
-        // select top 5 and return
-        return selectTop5(result);
-    }
-
-
-    //intitle search
+    //    // select top 5 and return
+    //    return selectTop5(result);
+    //}
 
 
-    //now preprocess the query in normal way
+    ////intitle search
 
-    // AND *
 
-    // OR *
+    ////now preprocess the query in normal way
 
-    if (cutQuery.size() == 3)
-    {
-        if (cutQuery[1] == "AND")
-        {
-            preprocess(cutQuery[0]);
-            preprocess(cutQuery[2]);
-            for (int j = 0; j < docData.size(); ++j)
-            {
-                result[j].place = findAnd(cutQuery[0], cutQuery[2], docData[j]);
-                result[j].score = result[j].place.size();
-            }
+    //// AND *
 
-            return selectTop5(result);
-                
-        }
-        else if (cutQuery[1] == "OR")
-        {
-            preprocess(cutQuery[0]);
-            preprocess(cutQuery[2]);
-            for (int j = 0; j < docData.size(); ++j)
-            {
-                result[j].place = findOr(cutQuery[0], cutQuery[2], docData[j]);
-                result[j].score = result[j].place.size();
+    //// OR *
 
-                return selectTop5(result);
-            }
-        }
-    }
+    //if (cutQuery.size() == 3)
+    //{
+    //    if (cutQuery[1] == "AND")
+    //    {
+    //        preprocess(cutQuery[0]);
+    //        preprocess(cutQuery[2]);
+    //        for (int j = 0; j < docData.size(); ++j)
+    //        {
+    //            result[j].place = findAnd(cutQuery[0], cutQuery[2], docData[j]);
+    //            result[j].score = result[j].place.size();
+    //        }
+
+    //        return selectTop5(result);
+    //            
+    //    }
+    //    else if (cutQuery[1] == "OR")
+    //    {
+    //        preprocess(cutQuery[0]);
+    //        preprocess(cutQuery[2]);
+    //        for (int j = 0; j < docData.size(); ++j)
+    //        {
+    //            result[j].place = findOr(cutQuery[0], cutQuery[2], docData[j]);
+    //            result[j].score = result[j].place.size();
+
+    //            return selectTop5(result);
+    //        }
+    //    }
+    //}
 
 
 
@@ -154,70 +155,70 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
         preprocess(cutQuery[i]);
     }
 
-    //remove stopwords (wait for trie....)
+    ////remove stopwords (wait for trie....)
 
 
-    // start the search
+    //// start the search
 	
 
-    
+    //
  
 
-    vector<int> remove;
-    string tmp;
-    //NOT *
-    for (int i = 0; i < cutQuery.size(); ++i)
-    {
-        if (cutQuery[i][0] == '-')
-        {
-            tmp = "";
-            remove.push_back(i);
+    //vector<int> remove;
+    //string tmp;
+    ////NOT *
+    //for (int i = 0; i < cutQuery.size(); ++i)
+    //{
+    //    if (cutQuery[i][0] == '-')
+    //    {
+    //        tmp = "";
+    //        remove.push_back(i);
 
-            for (int j = 1; j < cutQuery[i].size(); ++j)
-            {
-                tmp = tmp + cutQuery[i][j];
-            }
+    //        for (int j = 1; j < cutQuery[i].size(); ++j)
+    //        {
+    //            tmp = tmp + cutQuery[i][j];
+    //        }
 
-            for (int j = 0; j < docData.size(); ++j)
-            {
-                if (findNOT(tmp, docData[j]))
-                {
-                    result[j].score -= 5;
-                }
-                else result[j].score += 5;
-            }
-        }
-    }
+    //        for (int j = 0; j < docData.size(); ++j)
+    //        {
+    //            if (findNOT(tmp, docData[j]))
+    //            {
+    //                result[j].score -= 5;
+    //            }
+    //            else result[j].score += 5;
+    //        }
+    //    }
+    //}
 
-    //search price range *
+    ////search price range *
 
-    //search price *
-    for (int i = 0; i < cutQuery.size(); ++i)
-    {
-        if (isPrice(cutQuery[i]))
-        {
-            tmp = "";
-            remove.push_back(i);
+    ////search price *
+    //for (int i = 0; i < cutQuery.size(); ++i)
+    //{
+    //    if (isPrice(cutQuery[i]))
+    //    {
+    //        tmp = "";
+    //        remove.push_back(i);
 
-            for (int j = 1; j < cutQuery[i].size(); ++j)
-            {
-                tmp = tmp + cutQuery[i][j];
-            }
+    //        for (int j = 1; j < cutQuery[i].size(); ++j)
+    //        {
+    //            tmp = tmp + cutQuery[i][j];
+    //        }
 
-            for (int j = 0; j < docData.size(); ++j)
-            {
-                tmpSearchResult = findPrice(stoi(tmp), docData[j]);
-                result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
-                if (tmpSearchResult.size() == 0)
-                {
-                    result[j].score -= 5;
-                }
-                else result[j].score += tmpSearchResult.size();
-            }
-        }
-    }
+    //        for (int j = 0; j < docData.size(); ++j)
+    //        {
+    //            tmpSearchResult = findPrice(stoi(tmp), docData[j]);
+    //            result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+    //            if (tmpSearchResult.size() == 0)
+    //            {
+    //                result[j].score -= 5;
+    //            }
+    //            else result[j].score += tmpSearchResult.size();
+    //        }
+    //    }
+    //}
 
-    //synonym *
+    ////synonym *
 
     //normal search
     for (int i = 0; i < cutQuery.size(); ++i)
@@ -226,6 +227,7 @@ vector<searchData> search(const vector<fileData>& docData, const vector<fileData
         {
             tmpSearchResult = normalSearch(docData[j], cutQuery[i]);
             result[j].place.insert(result[j].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+            result[j].score += tmpSearchResult.size();
         }
     }
 
@@ -237,6 +239,8 @@ vector<int> normalSearch(const fileData& file, const string& key)
 {
 	vector<int> empty;
     trieNode* pCrawl = file.data.root;
+    if (pCrawl == NULL)
+        return empty;
     for (int i = 0; i < key.length(); i++)
     {
         
@@ -363,18 +367,27 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
     }
 
     Quicksort(positiveScore, 0, positiveScore.size() - 1);
-
+    for (int i = 0; i < 5; i++)
+    {
+        cout << positiveScore[positiveScore.size() - 1 - i] << endl;
+    }
     int n;
     if (positiveScore.size() < 5)
         n = positiveScore.size();
     else
         n = 5;
-    for (int i = 0; i < searchResult.size(); ++i)
+
+
+    for (int j = 0; j < n; ++j)
     {
-        for (int j = 0; j < n; ++j)
+        for (int i = 0; i < searchResult.size(); ++i)
         {
-            if (positiveScore[j] == searchResult[i].score)
+            if (positiveScore[positiveScore.size() - 1 - j] == searchResult[i].score)
+            {
                 result.push_back(searchResult[i]);
+                searchResult.erase(searchResult.begin() + i);
+                break;
+            }            
         }
     }
 
@@ -486,4 +499,25 @@ bool isNumber(char input)
     if (input < '0' && input > '9')
         return 0;
     return 1;
+}
+
+void displayTest(searchData searchResult)
+{
+    ifstream fin(searchResult.fileName);
+    if (!fin.is_open())
+        cout << "cannot open file: " << searchResult.fileName;
+    cout << searchResult.fileName << ": ";
+    int fileCounter = 0;
+    string tmp;
+    for (int i = 0; i < searchResult.place.size(); ++i)
+    {
+        while (fileCounter < searchResult.place[i])
+        {
+            fin >> tmp;
+            ++fileCounter;
+        }
+        cout << tmp << " ";
+    }
+
+    cout << endl;
 }
