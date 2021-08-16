@@ -506,19 +506,25 @@ void displayTest(searchData searchResult)
 {
     ifstream fin("./Search Engine-Data/Search Engine-Data/" + searchResult.fileName);
     if (!fin.is_open())
-        cout << "cannot open file: " << searchResult.fileName;
-    cout << searchResult.fileName << ": ";
-    int fileCounter = 0;
-    string tmp;
-    for (int i = 0; i < searchResult.place.size(); ++i)
     {
-        while (fileCounter < searchResult.place[i])
-        {
-            fin >> tmp;
-            ++fileCounter;
-        }
-        cout << tmp << " ";
+        cout << "cannot open file: " << searchResult.fileName << endl;
     }
-
+    else
+    {
+        cout << searchResult.fileName << ": ";
+        int fileCounter = 0;
+        string tmp;
+        for (int i = 0; i < searchResult.place.size(); ++i)
+        {
+            while (fileCounter < searchResult.place[i])
+            {
+                fin >> tmp;
+                ++fileCounter;
+            }
+            cout << tmp << " ";
+        }
+    }
+    fin.close();
     cout << endl << endl;
+
 }
