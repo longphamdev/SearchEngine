@@ -1,1 +1,4 @@
-﻿  searchEngine.vcxproj -> D:\Project_CS163_2021\SearchEngine\searchEngine\Debug\searchEngine.exe
+﻿  UI.cpp
+C:\Users\tin85\OneDrive\Máy tính\GitHub\searchEngine\SearchEngine\searchEngine\searchEngine\UI.cpp(118,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\searchEngine\SearchEngine\searchEngine\searchEngine\UI.cpp(157,23): warning C4018: '<': signed/unsigned mismatch
+  searchEngine.vcxproj -> C:\Users\tin85\OneDrive\Máy tính\GitHub\searchEngine\SearchEngine\searchEngine\Debug\searchEngine.exe
