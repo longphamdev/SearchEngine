@@ -1,47 +1,38 @@
-﻿  UI.cpp
-D:\project\SearchEngine\searchEngine\searchEngine\UI.cpp(122,21): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\UI.cpp(161,23): warning C4018: '<': signed/unsigned mismatch
-  fileHandling.cpp
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(69,26): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(83,31): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(89,39): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(113,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(148,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(177,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(192,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\fileHandling.cpp(238,27): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  query1.cpp
-  search.cpp
+﻿  search.cpp
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(31,23): warning C4018: '<': signed/unsigned mismatch
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(40,23): warning C4018: '<': signed/unsigned mismatch
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(56,23): warning C4018: '<': signed/unsigned mismatch
 D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(153,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(224,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(226,27): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(244,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(271,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(295,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(300,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(127,31): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(140,31): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(152,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(159,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(178,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(185,31): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(190,31): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(234,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(236,27): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(254,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(281,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(305,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(310,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
           with
           [
               _Ty=int
           ]
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(306,27): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(316,35): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(380,27): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(392,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(403,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(406,27): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(455,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(469,23): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(488,12): warning C4804: '<': unsafe use of type 'bool' in operation
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(488,20): warning C4018: '<': signed/unsigned mismatch
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(513,27): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(492): warning C4715: 'isPriceRange': not all control paths return a value
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(316,27): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(326,35): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(373,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(390,27): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(402,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(416,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(421,19): warning C4018: '>=': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(467,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(481,23): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(500,12): warning C4804: '<': unsafe use of type 'bool' in operation
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(500,20): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(525,27): warning C4018: '<': signed/unsigned mismatch
+D:\project\SearchEngine\searchEngine\searchEngine\search.cpp(504): warning C4715: 'isPriceRange': not all control paths return a value
   searchEngine.vcxproj -> D:\project\SearchEngine\searchEngine\Debug\searchEngine.exe

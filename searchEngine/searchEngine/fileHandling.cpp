@@ -35,8 +35,8 @@ vector<fileData> getFileData()
 }
 fileData getStopWord()
 {
-    string dir = "./Search Engine-Data/Search Engine-Data/";
-    return fileData(dir, "000.txt");
+    string dir = "./data/";
+    return fileData(dir, "stopword.txt");
 }
 
 
