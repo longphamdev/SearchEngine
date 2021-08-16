@@ -1,3 +1,4 @@
+testthu.txt
 Gruop18News61.txt
 Gruop18News62.txt
 Gruop18News63.txt

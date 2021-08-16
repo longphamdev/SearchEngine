@@ -68,7 +68,7 @@ vector<string> stringToWord(const string& input)
     return result;
 }
 
-vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData,
+vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData, const vector<synonymData>& synoData,
 const string& query)
 {
     //init the searchData
@@ -129,9 +129,7 @@ const string& query)
                 result[j].place = findAnd(cutQuery[0], cutQuery[2], docData[j]);
                 result[j].score = result[j].place.size();
             }
-
             return selectTop5(result);
-                
         }
         else if (cutQuery[1] == "OR")
         {
@@ -200,7 +198,7 @@ const string& query)
 
     ////search price range *
 
-    ////search price *
+    //search price *
     //for (int i = 0; i < cutQuery.size(); ++i)
     //{
     //    if (isPrice(cutQuery[i]))
@@ -225,8 +223,54 @@ const string& query)
     //        }
     //    }
     //}
-
+    
     //synonym *
+    vector<string> synonyms;
+
+    for (int i = 0; i < cutQuery.size(); ++i)
+    {
+        if (cutQuery[i][0] == '~')
+        {
+            bool check = 0;
+            tmp = "";
+            remove.push_back(i);
+
+            for (int j = 1; j < cutQuery[i].size(); ++j)
+            {
+                tmp = tmp + cutQuery[i][j];
+            }
+
+            for (int j = 0; j < synoData.size(); ++j)
+            {
+                synonyms = synonymSearch(synoData[j], tmp);
+                if (synonyms.size() > 0)
+                {
+                    check = 1;
+                    for (int t = 0; t < synonyms.size(); ++t)
+                    {
+                        for (int k = 0; k < docData.size(); ++k)
+                        {
+                            tmpSearchResult = normalSearch(docData[k], synonyms[t]);
+                            result[k].place.insert(result[k].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+                            result[k].score += tmpSearchResult.size();
+                        }
+                    }
+                    break;
+                }
+            }
+
+            if (check == 0)
+            {
+                for (int k = 0; k < docData.size(); ++k)
+                {
+                    tmpSearchResult = normalSearch(docData[k], tmp);
+                    result[k].place.insert(result[k].place.end(), tmpSearchResult.begin(), tmpSearchResult.end());
+                    result[k].score += tmpSearchResult.size();
+                }
+            }
+        }
+    }
+
 
     cutQuery = removeElements(cutQuery, remove);
 
@@ -409,6 +453,8 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
 vector<string> removeElements(vector<string> input, vector<int> remove)
 {
     vector<string> result;
+    if (remove.size() == 0)
+        return input;
     Quicksort(remove, 0, remove.size() - 1);
     bool check = 0;
     int j = 0;
@@ -537,3 +583,34 @@ void displayTest(searchData searchResult)
 
 }
 
+
+vector<string> synonymSearch(const synonymData& file, const string& key)
+{
+    vector<string> empty;
+    trieNode* pCrawl = file.data.root;
+    int index;
+    if (pCrawl == NULL)
+        return empty;
+    for (int i = 0; i < key.length(); i++)
+    {
+        if (key[i] >= 'a' && key[i] <= 'z')
+            index = key[i] - 'a';
+
+        else if (key[i] >= '0' && key[i] <= '9')
+            index = 26 + key[i] - '0';
+
+        else if (key[i] == '#')
+            index = 36;
+        else index = 37;
+
+        if (!pCrawl->child[index])
+            return empty;
+
+        pCrawl = pCrawl->child[index];
+    }
+    if (pCrawl->place.size() != 0)
+        return file.words;
+    return empty;
+
+
+}

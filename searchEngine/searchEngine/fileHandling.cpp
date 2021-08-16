@@ -211,7 +211,6 @@ vector<synonymData> getSynonym()
     vector<vector<string>> s;
     s.resize(200);
     ifstream iFile;
-    ofstream oFile;
     int i = 0;
 
     iFile.open("./data/synonym.txt");
@@ -225,7 +224,8 @@ vector<synonymData> getSynonym()
 
         while (getline(iFile, str))
         {
-            temp = splitWord(str);
+            temp = splitWord(lowCase(str));
+
             s[i].assign(temp.begin(), temp.end());
             temp.clear();
             i++;
@@ -233,13 +233,12 @@ vector<synonymData> getSynonym()
     }
     iFile.close();
 
+    synonymData tmpSyno;
     for (int k = 0; k < i; k++)
     {
-        for (int j = 0; j < s[k].size(); j++)
-        {
-            cout << s[k][j] << " ";
-        }
-        cout << endl;
+         tmpSyno.words = s[k];
+         tmpSyno.data.insertTrie(s[k]);
+         rs.push_back(tmpSyno);
     }
 
     return rs;
