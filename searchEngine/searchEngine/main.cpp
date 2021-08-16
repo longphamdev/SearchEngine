@@ -3,10 +3,6 @@
 #include "query1.h"
 #include "UI.h"
 
-
-
-
-
 int main()
 {
 	//ifstream fin;
@@ -30,6 +26,7 @@ int main()
 	//	
 	////result = search(docData, stopwordData, synonymData,  query);
 	//
+
 
 	//for (int i = 0; i < 2; i++) {
 	//	TextColor(241);
@@ -83,5 +80,39 @@ int main()
 		////vector<fileData> test;
 		////
 		////test.push_back(tmp);
+	DrawMain();
+
+	GotoXY(21, 15);
+	getline(cin, query);
+	Sleep(500);
+	system("CLS");
+
+	char status = 'y';
+	//result = search(docData, stopwordData, synonymData,  query);
+
+	while (status != 'x'){
+		displaySearchResult(fin, result);
+
+		cout << endl;
+		displayOption(status);
+
+	    if (status == 'x') {
+			exit(1);
+	    }
+	    if (status == 'y') {
+			system("CLS");
+		    DrawMain();
+			GotoXY(21, 15);
+			cin.ignore();
+			getline(cin, query);
+			Sleep(500);
+			system("CLS");
+	    }
+		if (status == 'n') {
+			system("CLS");
+		}
+    }
+
+
 	return 0;
 }
