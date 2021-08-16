@@ -18,17 +18,15 @@ int main()
 	tmp.fileName = "000.txt";
 	result.push_back(tmp);*/
 	char status = 'n';
-	while (status != 'x') {
-	    DrawMain();
-	    GotoXY(21, 15);
-	    getline(cin, query);
-	    Sleep(500);
-	    system("CLS");
-		
-	    
-	    result = search(docData, stopwordData,  query);
-
 	
+	DrawMain();
+	GotoXY(21, 15);
+	getline(cin, query);
+	Sleep(500);
+	system("CLS");
+		
+	while (status != 'x') {
+	    result = search(docData, stopwordData,  query);
 
 		displaySearchResult(fin, result);
 
@@ -41,12 +39,12 @@ int main()
 			break;
 		case 'y':
 			system("CLS");
-			/*DrawMain();
+			DrawMain();
 			GotoXY(21, 15);
 			cin.ignore();
 			getline(cin, query);
 			Sleep(500);
-			system("CLS");*/
+			system("CLS");
 			break;
 		case 'n':
 			while (status == 'n') {
@@ -55,6 +53,13 @@ int main()
 				cout << endl;
 				displayOption(status);
 			}
+			system("CLS");
+			DrawMain();
+			GotoXY(21, 15);
+			cin.ignore();
+			getline(cin, query);
+			Sleep(500);
+			system("CLS");
 			break;
 		default:
 			break;

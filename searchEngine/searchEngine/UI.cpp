@@ -115,59 +115,64 @@ void DrawMain() {
 }
 
 void displaySearchResult(ifstream& fin, vector<searchData> result) {
-	for (int i = 0; i < result.size(); i++) {
-		TextColor(9);
-		cout << "[ " << i + 1 << " ]";
-		cout << result[i].fileName << endl;
-		TextColor(14);
+	if (result.size() == 0) {
+		cout << "Can not find" << endl;
+	}
+	else {
+		for (int i = 0; i < result.size(); i++) {
+			TextColor(9);
+			cout << "[ " << i + 1 << " ]";
+			cout << result[i].fileName << endl;
+			TextColor(14);
+			string temp;
+			fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[i].fileName);
+			if (!fin.is_open()) {
+				cout << "Can not open file";
+			}
+			else {
+				for (int j = 0; j <= 10; j++) {
+					fin >> temp;
+					cout << temp << " ";
+				}
+				cout << endl;
+				cout << "--------------------------------------------------------- " << endl;
+			}
+			fin.close();
+		}
+
+		int choose;
+		cout << "Select chosen file: ";
+		cin >> choose;
+		Sleep(500);
+		system("CLS");
+
+		TextColor(7);
 		string temp;
-		fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[i].fileName);
+		fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[choose - 1].fileName);
 		if (!fin.is_open()) {
 			cout << "Can not open file";
 		}
 		else {
-			for (int j = 0; j <= 10; j++) {
+			vector<int> tempPlace = result[choose - 1].place;
+			int place = 0;
+			while (!fin.eof()) {
+
 				fin >> temp;
+				for (int i = 0; i < tempPlace.size(); i++) {
+					if (place == tempPlace[i]) {
+						TextColor(30);
+						cout << temp << "";
+						TextColor(7);
+						tempPlace.erase(tempPlace.begin() + i);
+						temp = "";
+					}
+				}
 				cout << temp << " ";
+				place++;
 			}
-			cout << endl;
-			cout << "--------------------------------------------------------- " << endl;
 		}
 		fin.close();
 	}
-
-	int choose;
-	cout << "Select chosen file: ";
-	cin >> choose;
-	Sleep(500);
-	system("CLS");
-
-	TextColor(7);
-	string temp;
-	fin.open("C:/Users/tin85/OneDrive/Máy tính/GitHub/SearchEngine/searchEngine/searchEngine/Search Engine-Data/Search Engine-Data/" + result[choose - 1].fileName);
-	if (!fin.is_open()) {
-		cout << "Can not open file";
-	}
-	else {
-		vector<int> tempPlace = result[choose - 1].place;
-		int place = 0;
-		while (!fin.eof()) {
-			
-			fin >> temp;
-			for (int i = 0; i < tempPlace.size(); i++) {
-				if (place == tempPlace[i]) {
-					TextColor(30);
-					cout << temp << "";
-					TextColor(7);
-					tempPlace.erase(tempPlace.begin()+i);
-					temp = "";
-				}
-			}
-			cout << temp << " ";
-			place++;
-		}
-	}
-	fin.close();
 }
 
 void displayOption(char& status) {
