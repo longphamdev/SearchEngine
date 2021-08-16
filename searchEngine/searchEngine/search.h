@@ -51,4 +51,6 @@ bool isNumber(char input);
 
 void displayTest(searchData searchResult);
 vector<string> synonymSearch(const synonymData& file, const string& key);
+
+bool intitleSearch(fileData file, string key);
 #endif

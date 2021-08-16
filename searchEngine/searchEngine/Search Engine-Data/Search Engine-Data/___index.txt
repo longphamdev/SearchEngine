@@ -1,4 +1,4 @@
-testthu.txt
+Here is the ultimate hot springs road trip in Colorado.txt
 Gruop18News61.txt
 Gruop18News62.txt
 Gruop18News63.txt
@@ -14,7 +14,6 @@ Gruop18News72.txt
 Gruop18News73.txt
 Gruop18News74.txt
 Gruop18News75.txt
-Here is the ultimate hot springs road trip in Colorado.txt
 Horse.txt
 How archaeologists determine the date of ancient sites and artifacts.txt
 How to stay safe from tornadoes.txt

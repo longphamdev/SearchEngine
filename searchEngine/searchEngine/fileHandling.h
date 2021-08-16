@@ -3,7 +3,6 @@
 #define _FILEHANDLING_
 #include <iostream>
 #include <fstream>
-#include <algorithm>
 #include "Trie.h"
 #include<string.h>
 #include<sstream>
