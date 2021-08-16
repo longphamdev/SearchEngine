@@ -367,7 +367,8 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
     }
 
     Quicksort(positiveScore, 0, positiveScore.size() - 1);
-    for (int i = 0; i < 5; i++)
+
+    for (int i = 0; i < positiveScore.size(); i++)
     {
         cout << positiveScore[positiveScore.size() - 1 - i] << endl;
     }
@@ -503,21 +504,27 @@ bool isNumber(char input)
 
 void displayTest(searchData searchResult)
 {
-    ifstream fin(searchResult.fileName);
+    ifstream fin("./Search Engine-Data/Search Engine-Data/" + searchResult.fileName);
     if (!fin.is_open())
-        cout << "cannot open file: " << searchResult.fileName;
-    cout << searchResult.fileName << ": ";
-    int fileCounter = 0;
-    string tmp;
-    for (int i = 0; i < searchResult.place.size(); ++i)
     {
-        while (fileCounter < searchResult.place[i])
-        {
-            fin >> tmp;
-            ++fileCounter;
-        }
-        cout << tmp << " ";
+        cout << "cannot open file: " << searchResult.fileName << endl;
     }
+    else
+    {
+        cout << searchResult.fileName << ": ";
+        int fileCounter = 0;
+        string tmp;
+        for (int i = 0; i < searchResult.place.size(); ++i)
+        {
+            while (fileCounter < searchResult.place[i])
+            {
+                fin >> tmp;
+                ++fileCounter;
+            }
+            cout << tmp << " ";
+        }
+    }
+    fin.close();
+    cout << endl << endl;
 
-    cout << endl;
 }
