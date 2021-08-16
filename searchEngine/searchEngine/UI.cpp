@@ -110,11 +110,13 @@ void DrawMain() {
 	
 }
 
-void displaySearchResult(ifstream& fin, vector<searchData> result) {
+void displaySearchResult(ifstream& fin, vector<searchData> result, microseconds duration) {
 	if (result.size() == 0) {
 		cout << "Can not find" << endl;
 	}
 	else {
+		cout << "Search in " << duration.count() << " microseconds" << endl;
+		cout << endl;
 		for (int i = 0; i < result.size(); i++) {
 			TextColor(9);
 			cout << "[ " << i + 1 << " ]";

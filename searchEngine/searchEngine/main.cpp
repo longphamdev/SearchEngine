@@ -20,9 +20,13 @@ int main()
 
 	char status = 'y';
 	while (status != 'x') {
-	    result = search(docData, stopwordData, synoData,query);
+		auto start = high_resolution_clock::now();
+		result = search(docData, stopwordData, synoData, query);
+		auto end = high_resolution_clock::now();
+		auto duration = duration_cast<microseconds>(end - start);
+		
 
-		displaySearchResult(fin, result);
+		displaySearchResult(fin, result,duration);
 
 		cout << endl;
 		displayOption(status);
@@ -42,7 +46,7 @@ int main()
 		case 'n':
 			while (status == 'n') {
 				system("CLS");
-				displaySearchResult(fin, result);
+				displaySearchResult(fin, result,duration);
 				cout << endl;
 				displayOption(status);
 			}

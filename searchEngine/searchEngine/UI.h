@@ -9,7 +9,12 @@
 #include <string>
 #include "search.h"
 #include <vector>
+#include <iomanip>
+#include <ctime>
+#include <chrono>
+#include <ratio>
 
+using namespace std::chrono;
 using namespace std;
 
 void resizeConsole(int width, int height);
@@ -24,7 +29,7 @@ void FixConsoleWindow();
 
 void DrawMain();
 
-void displaySearchResult(ifstream& fin, vector<searchData> result);
+void displaySearchResult(ifstream& fin, vector<searchData> result, microseconds duration);
 
 void displayOption(char& status);
 #endif 
