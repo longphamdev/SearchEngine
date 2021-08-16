@@ -367,10 +367,7 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
     }
 
     Quicksort(positiveScore, 0, positiveScore.size() - 1);
-    for (int i = 0; i < 5; i++)
-    {
-        cout << positiveScore[positiveScore.size() - 1 - i] << endl;
-    }
+    
     int n;
     if (positiveScore.size() < 5)
         n = positiveScore.size();
