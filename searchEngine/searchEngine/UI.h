@@ -7,6 +7,8 @@
 #include <Windows.h>
 #include <fstream>
 #include <string>
+#include "search.h"
+#include <vector>
 
 using namespace std;
 
@@ -21,4 +23,8 @@ void showImage(string link);
 void FixConsoleWindow();
 
 void DrawMain();
+
+void displaySearchResult(ifstream& fin, vector<searchData> result);
+
+void displayOption(char& status);
 #endif 
