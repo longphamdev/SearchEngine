@@ -504,6 +504,8 @@ bool isNumber(char input)
 void displayTest(searchData searchResult)
 {
     ifstream fin(searchResult.fileName);
+    if (!fin.is_open())
+        cout << "cannot open file: " << searchResult.fileName;
     cout << searchResult.fileName << ": ";
     int fileCounter = 0;
     string tmp;
