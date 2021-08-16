@@ -1,33 +1,32 @@
 ﻿  search.cpp
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(31,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(40,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(56,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(153,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(224,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(226,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(244,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(271,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(295,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(300,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(31,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(40,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(56,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(153,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(224,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(226,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(244,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(271,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(295,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(300,50): warning C4805: '!=': unsafe mix of type 'bool' and type '_Ty' in operation
           with
           [
               _Ty=int
           ]
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(306,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(316,35): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(371,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(384,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(396,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(407,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(410,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(459,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(473,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(492,12): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(492,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(513,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(496): warning C4715: 'isPriceRange': not all control paths return a value
-  searchEngine.vcxproj -> C:\Users\vntua\Documents\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(306,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(316,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(380,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(392,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(403,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(406,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(455,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(469,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(488,12): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(488,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(513,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\searchEngine\search.cpp(492): warning C4715: 'isPriceRange': not all control paths return a value
+  searchEngine.vcxproj -> C:\Users\tin85\OneDrive\Máy tính\GitHub\SearchEngine\searchEngine\Debug\searchEngine.exe

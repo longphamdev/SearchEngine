@@ -7,27 +7,28 @@ int main()
 {
 	ifstream fin;
 	string query;
-	const vector<fileData> docData;
-	const vector<fileData> stopwordData;
+	const vector<fileData> docData = getFileData();
+	fileData stopwordData = getStopWord();
 	const vector<fileData> synonymData;
 	vector<searchData> result;
-	searchData tmp;
+	/*searchData tmp;
 	tmp.fileName = "1.txt";
 	tmp.place.push_back(10);
 	result.push_back(tmp);
 	tmp.fileName = "000.txt";
-	result.push_back(tmp);
-
-	DrawMain();
-	GotoXY(21, 15);
-	getline(cin, query);
-	Sleep(500);
-	system("CLS");
-		
+	result.push_back(tmp);*/
 	char status = 'n';
-	//result = search(docData, stopwordData, synonymData,  query);
+	while (status != 'x') {
+	    DrawMain();
+	    GotoXY(21, 15);
+	    getline(cin, query);
+	    Sleep(500);
+	    system("CLS");
+		
+	    
+	    result = search(docData, stopwordData,  query);
 
-	while (status != 'x'){
+	
 
 		displaySearchResult(fin, result);
 
@@ -40,15 +41,20 @@ int main()
 			break;
 		case 'y':
 			system("CLS");
-			DrawMain();
+			/*DrawMain();
 			GotoXY(21, 15);
 			cin.ignore();
 			getline(cin, query);
 			Sleep(500);
-			system("CLS");
+			system("CLS");*/
 			break;
 		case 'n':
-			system("CLS");
+			while (status == 'n') {
+				system("CLS");
+				displaySearchResult(fin, result);
+				cout << endl;
+				displayOption(status);
+			}
 			break;
 		default:
 			break;
