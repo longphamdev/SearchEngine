@@ -503,7 +503,7 @@ bool isNumber(char input)
 
 void displayTest(searchData searchResult)
 {
-    ifstream fin(searchResult.fileName);
+    ifstream fin("./Search Engine-Data/Search Engine-Data/" + searchResult.fileName);
     if (!fin.is_open())
     {
         cout << "cannot open file: " << searchResult.fileName << endl;
@@ -524,4 +524,6 @@ void displayTest(searchData searchResult)
         }
     }
     fin.close();
+    cout << endl << endl;
+
 }
