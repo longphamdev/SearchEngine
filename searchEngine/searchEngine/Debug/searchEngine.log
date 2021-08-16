@@ -31,4 +31,6 @@ D:\Project_CS163_2021\SearchEngine\searchEngine\searchEngine\search.cpp(488,20):
 D:\Project_CS163_2021\SearchEngine\searchEngine\searchEngine\search.cpp(513,27): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
 D:\Project_CS163_2021\SearchEngine\searchEngine\searchEngine\search.cpp(492): warning C4715: 'isPriceRange': not all control paths return a value
+  LINK : D:\Project_CS163_2021\SearchEngine\searchEngine\Debug\searchEngine.exe not found or not built by the last incremental link; performing full link
+main.obj : warning LNK4020: a type record in 'd:\project_cs163_2021\searchengine\searchengine\searchengine\debug\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   searchEngine.vcxproj -> D:\Project_CS163_2021\SearchEngine\searchEngine\Debug\searchEngine.exe
