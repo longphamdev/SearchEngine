@@ -77,41 +77,44 @@ int main()
 	for (int i = 0; i < result.size(); ++i)
 		displayTest(result[i]);
 
+	cin.ignore(1000, '\n');
+	cout << endl << "press enter to continue...";
+	cin.get();
 		////vector<fileData> test;
 		////
 		////test.push_back(tmp);
-	DrawMain();
+	//DrawMain();
 
-	GotoXY(21, 15);
-	getline(cin, query);
-	Sleep(500);
-	system("CLS");
+	//GotoXY(21, 15);
+	//getline(cin, query);
+	//Sleep(500);
+	//system("CLS");
 
-	char status = 'y';
-	//result = search(docData, stopwordData, synonymData,  query);
+	//char status = 'y';
+	////result = search(docData, stopwordData, synonymData,  query);
 
-	while (status != 'x'){
-		displaySearchResult(fin, result);
+	//while (status != 'x'){
+	//	displaySearchResult(fin, result);
 
-		cout << endl;
-		displayOption(status);
+	//	cout << endl;
+	//	displayOption(status);
 
-	    if (status == 'x') {
-			exit(1);
-	    }
-	    if (status == 'y') {
-			system("CLS");
-		    DrawMain();
-			GotoXY(21, 15);
-			cin.ignore();
-			getline(cin, query);
-			Sleep(500);
-			system("CLS");
-	    }
-		if (status == 'n') {
-			system("CLS");
-		}
-    }
+	//    if (status == 'x') {
+	//		exit(1);
+	//    }
+	//    if (status == 'y') {
+	//		system("CLS");
+	//	    DrawMain();
+	//		GotoXY(21, 15);
+	//		cin.ignore();
+	//		getline(cin, query);
+	//		Sleep(500);
+	//		system("CLS");
+	//    }
+	//	if (status == 'n') {
+	//		system("CLS");
+	//	}
+ //   }
 
 
 	return 0;

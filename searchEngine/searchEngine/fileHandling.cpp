@@ -35,8 +35,8 @@ vector<fileData> getFileData()
 }
 fileData getStopWord()
 {
-    string dir = "./data/";
-    return fileData(dir, "stopword.txt");
+    string dir = "./Search Engine-Data/Search Engine-Data/";
+    return fileData(dir, "000.txt");
 }
 
 
@@ -46,6 +46,7 @@ fileData::fileData(string dir ,string fileName)
    // phan nay la 1
    vector<string> input;
    dir+=fileName;
+   this->fileName = fileName;
 
    ifstream iFile;
    iFile.open(dir);

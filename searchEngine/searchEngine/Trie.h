@@ -34,7 +34,7 @@ void deleteTrie(trieNode* root);
 
 void insert(struct trieNode* root, string key, int place);
 
-void copyTrieNode(trieNode* origin, trieNode* copy);
+void copyTrieNode(trieNode* origin, trieNode* &copy);
 
 // function for stopword
 

@@ -149,11 +149,11 @@ const string& query)
 
 
 
-    ////preprocess query
-    //for (int i = 0; i < cutQuery.size(); ++i)
-    //{
-    //    preprocess(cutQuery[i]);
-    //}
+    //preprocess query
+    for (int i = 0; i < cutQuery.size(); ++i)
+    {
+        preprocess(cutQuery[i]);
+    }
 
     ////remove stopwords (wait for trie....)
 
@@ -369,19 +369,25 @@ vector<searchData> selectTop5(vector<searchData>& searchResult)
     Quicksort(positiveScore, 0, positiveScore.size() - 1);
     for (int i = 0; i < 5; i++)
     {
-        cout << positiveScore[i] << endl;
+        cout << positiveScore[positiveScore.size() - 1 - i] << endl;
     }
     int n;
     if (positiveScore.size() < 5)
         n = positiveScore.size();
     else
         n = 5;
-    for (int i = 0; i < searchResult.size(); ++i)
+
+
+    for (int j = 0; j < n; ++j)
     {
-        for (int j = 0; j < n; ++j)
+        for (int i = 0; i < searchResult.size(); ++i)
         {
-            if (positiveScore[j] == searchResult[i].score)
+            if (positiveScore[positiveScore.size() - 1 - j] == searchResult[i].score)
+            {
                 result.push_back(searchResult[i]);
+                searchResult.erase(searchResult.begin() + i);
+                break;
+            }            
         }
     }
 
@@ -497,22 +503,19 @@ bool isNumber(char input)
 
 void displayTest(searchData searchResult)
 {
-	ifstream fin("./Search Engine-Data/Search Engine-Data/" + searchResult.fileName) ;
-    if (!fin.is_open())
+    ifstream fin(searchResult.fileName);
+    cout << searchResult.fileName << ": ";
+    int fileCounter = 0;
+    string tmp;
+    for (int i = 0; i < searchResult.place.size(); ++i)
     {
-        cout << "cannot open file: "<<searchResult.fileName;
+        while (fileCounter < searchResult.place[i])
+        {
+            fin >> tmp;
+            ++fileCounter;
+        }
+        cout << tmp << " ";
     }
-	int fileCounter = 0;
-	string tmp;
-	for (int i = 0; i < searchResult.place.size(); ++i)
-	{
-		while (i > fileCounter)
-		{
-			fin >> tmp;
-			++fileCounter;
-		}
 
-		cout << tmp << endl;
-	}
-	cout << endl << endl;
+    cout << endl;
 }
