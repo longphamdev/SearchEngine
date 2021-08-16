@@ -19,7 +19,7 @@ struct searchData
 };
 
 // not done
-vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData,
+vector<searchData> search(const vector<fileData>& docData, const fileData& stopwordData, const vector<synonymData> & synoData,
 const string& query);
 
 vector<searchData> selectTop5(vector<searchData>& searchResult);
@@ -50,5 +50,5 @@ bool isPriceRange(string input);
 bool isNumber(char input);
 
 void displayTest(searchData searchResult);
-
+vector<string> synonymSearch(const synonymData& file, const string& key);
 #endif

@@ -9,7 +9,7 @@ int main()
 	string query;
 	const vector<fileData> docData = getFileData();
 	fileData stopwordData = getStopWord();
-	const vector<fileData> synonymData;
+	const vector<synonymData> synoData = getSynonym();
 	vector<searchData> result;
 
 	DrawMain();
@@ -20,7 +20,7 @@ int main()
 
 	char status = 'y';
 	while (status != 'x') {
-	    result = search(docData, stopwordData,  query);
+	    result = search(docData, stopwordData, synoData,query);
 
 		displaySearchResult(fin, result);
 
