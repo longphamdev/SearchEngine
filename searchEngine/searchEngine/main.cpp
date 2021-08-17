@@ -7,11 +7,18 @@ int main()
 {
 	ifstream fin;
 	string query;
+
+	auto start = high_resolution_clock::now();
 	const vector<fileData> docData = getFileData();
+	auto end = high_resolution_clock::now();
+	auto duration = duration_cast<seconds>(end - start);
+
 	fileData stopwordData = getStopWord();
 	const vector<synonymData> synoData = getSynonym();
 	vector<searchData> result;
-
+	cout <<"Time load is: "<< duration.count()<<" s" << endl;
+	Sleep(10000);
+	system("CLS");
 	DrawMain();
 	GotoXY(21, 15);
 	getline(cin, query);

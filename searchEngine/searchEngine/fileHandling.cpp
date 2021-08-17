@@ -97,8 +97,8 @@ fileData::fileData(string dir ,string fileName)
     }
        //exit(0);
    }
-   else
-        cout << "cannot open file: " << fileName << endl;
+   /*else
+        cout << "cannot open file: " << fileName << endl;*/
    
 
 }
